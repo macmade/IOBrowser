@@ -27,6 +27,7 @@ import Cocoa
 public class MainWindowController: NSWindowController
 {
     @objc private dynamic var loading = true
+    @objc private dynamic var objects = [ IOObject ]()
     @objc private dynamic var root:     IOObject?
     
     @IBOutlet private var objectsController:    NSTreeController!
@@ -49,6 +50,20 @@ public class MainWindowController: NSWindowController
             {
                 self.loading = false
                 self.root    = object
+                
+                DispatchQueue.main.async
+                {
+                    guard let item = self.objectsView.item( atRow: 0 ) as? NSTreeNode else
+                    {
+                        return
+                    }
+                    
+                    self.objectsView.expandItem( item )
+                    item.children?.forEach
+                    {
+                        self.objectsView.expandItem( $0 )
+                    }
+                }
             }
         }
     }

@@ -57,9 +57,9 @@ import IOKit
         }
     }
     
-    @objc public dynamic var name:       String
-    @objc public dynamic var children:   [ IOObject ]     = []
-    @objc public dynamic var properties: [ String : Any ] = [:]
+    @objc public private( set ) dynamic var name:       String
+    @objc public private( set ) dynamic var children:   [ IOObject ]     = []
+    @objc public private( set ) dynamic var properties: [ String : Any ] = [:]
     
     private init?( entry: io_registry_entry_t, plane: String )
     {
