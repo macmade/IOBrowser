@@ -26,14 +26,17 @@ import Cocoa
 
 public class MainWindowController: NSWindowController
 {
-    @objc private dynamic var loading = true
-    @objc private dynamic var objects = [ IOObject ]()
-    @objc private dynamic var root:     IOObject?
+    @objc private dynamic var loading       = true
+    @objc private dynamic var objects       = [ IOObject ]()
+    @objc private dynamic var root:           IOObject?
+    @objc private dynamic var selectedObject: IOObject?
     
     @IBOutlet private var objectsController:    NSTreeController!
     @IBOutlet private var propertiesController: NSTreeController!
     @IBOutlet private var objectsView:          NSOutlineView!
     @IBOutlet private var propertiesView:       NSOutlineView!
+    
+    private var selectionObserver: NSKeyValueObservation?
     
     public override var windowNibName: NSNib.Name?
     {
@@ -43,6 +46,16 @@ public class MainWindowController: NSWindowController
     public override func windowDidLoad()
     {
         super.windowDidLoad()
+        
+        self.objectsController.sortDescriptors =
+        [
+            NSSortDescriptor( key: "name", ascending: true, selector: #selector( NSString.localizedCaseInsensitiveCompare( _: ) ) )
+        ]
+        
+        self.selectionObserver = self.objectsController.observe( \.selectedObjects )
+        {
+            o, c in self.selectedObject = self.objectsController.selectedObjects.first as? IOObject
+        }
         
         IOObject.root
         {
