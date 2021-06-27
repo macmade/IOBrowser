@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BAF2685020A00707676 /* ApplicationDelegate.swift */; };
+		05646BB52685020A00707676 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
+		05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
+		05646BF22685058700707676 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF02685058700707676 /* AboutWindowController.xib */; };
+		05646BF72685064C00707676 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BF62685064C00707676 /* MainWindowController.swift */; };
+		05646BFA2685072900707676 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF82685072900707676 /* MainWindowController.xib */; };
+		05646BFE268508D200707676 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BFD268508D200707676 /* Synchronizable.swift */; };
+		0566B96D2686B531006EE45A /* GitHubUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; };
+		0566B96E2686B531006EE45A /* GitHubUpdates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52688BE2E00E8A413 /* Preferences.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0566B9682686B526006EE45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05F82B251EF32EA700EC8A93;
+			remoteInfo = GitHubUpdates;
+		};
+		0566B96A2686B526006EE45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0555EBA01EF3DDA10016167F;
+			remoteInfo = Relauncher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0566B96F2686B531006EE45A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0566B96E2686B531006EE45A /* GitHubUpdates.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05646B9A268501B300707676 /* IOBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05646BA4268501B400707676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05646BA5268501B400707676 /* IOBrowser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOBrowser.entitlements; sourceTree = "<group>"; };
+		05646BAF2685020A00707676 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
+		05646BB22685020A00707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		05646BB8268503D300707676 /* Release - ccache.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release - ccache.xcconfig"; sourceTree = "<group>"; };
+		05646BB9268503D300707676 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		05646BBA268503D300707676 /* Debug - ccache.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug - ccache.xcconfig"; sourceTree = "<group>"; };
+		05646BBB268503D300707676 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		05646BBC268503D300707676 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		05646BBD268503D300707676 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		05646BBE268503D300707676 /* Release - Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release - Library.xcconfig"; sourceTree = "<group>"; };
+		05646BC0268503D300707676 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
+		05646BC1268503D300707676 /* Architectures.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Architectures.xcconfig; sourceTree = "<group>"; };
+		05646BC3268503D300707676 /* Issues.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Issues.xcconfig; sourceTree = "<group>"; };
+		05646BC5268503D300707676 /* Apple-APIs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Apple-APIs.xcconfig"; sourceTree = "<group>"; };
+		05646BC6268503D300707676 /* Generic-Issues.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Generic-Issues.xcconfig"; sourceTree = "<group>"; };
+		05646BC7268503D300707676 /* Security.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Security.xcconfig; sourceTree = "<group>"; };
+		05646BC8268503D300707676 /* Objective-C.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Objective-C.xcconfig"; sourceTree = "<group>"; };
+		05646BC9268503D300707676 /* Analysis-Policy.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Analysis-Policy.xcconfig"; sourceTree = "<group>"; };
+		05646BCA268503D300707676 /* Deployment.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Deployment.xcconfig; sourceTree = "<group>"; };
+		05646BCB268503D300707676 /* Build-Options.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Build-Options.xcconfig"; sourceTree = "<group>"; };
+		05646BCC268503D300707676 /* Swift-Compiler.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Swift-Compiler.xcconfig"; sourceTree = "<group>"; };
+		05646BCD268503D300707676 /* Static-Analyzer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Static-Analyzer.xcconfig"; sourceTree = "<group>"; };
+		05646BCF268503D300707676 /* Warnings-Policies.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Warnings-Policies.xcconfig"; sourceTree = "<group>"; };
+		05646BD0268503D300707676 /* Code-Generation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Code-Generation.xcconfig"; sourceTree = "<group>"; };
+		05646BD1268503D300707676 /* Language.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Language.xcconfig; sourceTree = "<group>"; };
+		05646BD2268503D300707676 /* General.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = General.xcconfig; sourceTree = "<group>"; };
+		05646BD3268503D300707676 /* Search-Paths.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Search-Paths.xcconfig"; sourceTree = "<group>"; };
+		05646BD4268503D300707676 /* Apple-LLVM.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Apple-LLVM.xcconfig"; sourceTree = "<group>"; };
+		05646BD7268503D300707676 /* Modules.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Modules.xcconfig; sourceTree = "<group>"; };
+		05646BD8268503D300707676 /* Objective-C.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Objective-C.xcconfig"; sourceTree = "<group>"; };
+		05646BD9268503D300707676 /* C++.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "C++.xcconfig"; sourceTree = "<group>"; };
+		05646BDA268503D300707676 /* Code-Generation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Code-Generation.xcconfig"; sourceTree = "<group>"; };
+		05646BDB268503D300707676 /* Address-Sanitizer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Address-Sanitizer.xcconfig"; sourceTree = "<group>"; };
+		05646BDC268503D300707676 /* Language.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Language.xcconfig; sourceTree = "<group>"; };
+		05646BDD268503D300707676 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
+		05646BDE268503D300707676 /* Undefined-Behavior-Sanitizer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Undefined-Behavior-Sanitizer.xcconfig"; sourceTree = "<group>"; };
+		05646BDF268503D300707676 /* Warning-Policies.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Warning-Policies.xcconfig"; sourceTree = "<group>"; };
+		05646BE1268503D300707676 /* Objective-C-ARC.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Objective-C-ARC.xcconfig"; sourceTree = "<group>"; };
+		05646BE2268503D300707676 /* Objective-C.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Objective-C.xcconfig"; sourceTree = "<group>"; };
+		05646BE3268503D300707676 /* C++.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "C++.xcconfig"; sourceTree = "<group>"; };
+		05646BE4268503D300707676 /* All-Languages.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "All-Languages.xcconfig"; sourceTree = "<group>"; };
+		05646BE5268503D300707676 /* Preprocessing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Preprocessing.xcconfig; sourceTree = "<group>"; };
+		05646BE6268503D300707676 /* Debug - Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug - Library.xcconfig"; sourceTree = "<group>"; };
+		05646BE7268503D300707676 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		05646BE9268503D300707676 /* ccache-config.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "ccache-config.sh"; sourceTree = "<group>"; };
+		05646BEA268503D300707676 /* ccache.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ccache.sh; sourceTree = "<group>"; };
+		05646BEB268503D300707676 /* Debug - zld.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug - zld.xcconfig"; sourceTree = "<group>"; };
+		05646BEE2685055F00707676 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		05646BF12685058700707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutWindowController.xib; sourceTree = "<group>"; };
+		05646BF62685064C00707676 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		05646BF92685072900707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
+		05646BFD268508D200707676 /* Synchronizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
+		05646C03268527E400707676 /* IOBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IOBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GitHubUpdates.xcodeproj; path = Submodules/GitHubUpdates/GitHubUpdates.xcodeproj; sourceTree = "<group>"; };
+		05B886B52688BE2E00E8A413 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05646B97268501B300707676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0566B96D2686B531006EE45A /* GitHubUpdates.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05646B91268501B300707676 = {
+			isa = PBXGroup;
+			children = (
+				0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */,
+				05646BB7268503D300707676 /* xcconfig */,
+				05646B9C268501B300707676 /* IOBrowser */,
+				05646B9B268501B300707676 /* Products */,
+				0566B96C2686B531006EE45A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		05646B9B268501B300707676 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05646B9A268501B300707676 /* IOBrowser.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05646B9C268501B300707676 /* IOBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				05646BAD2685020A00707676 /* Classes */,
+				05646BB02685020A00707676 /* UI */,
+				05646BB62685021500707676 /* Supporting Files */,
+			);
+			path = IOBrowser;
+			sourceTree = "<group>";
+		};
+		05646BAD2685020A00707676 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				05646BEE2685055F00707676 /* AboutWindowController.swift */,
+				05646BAF2685020A00707676 /* ApplicationDelegate.swift */,
+				05646BF62685064C00707676 /* MainWindowController.swift */,
+				05B886B52688BE2E00E8A413 /* Preferences.swift */,
+				05646BFD268508D200707676 /* Synchronizable.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		05646BB02685020A00707676 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				05646BF02685058700707676 /* AboutWindowController.xib */,
+				05646BB12685020A00707676 /* MainMenu.xib */,
+				05646BF82685072900707676 /* MainWindowController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		05646BB62685021500707676 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05646BA4268501B400707676 /* Info.plist */,
+				05646C03268527E400707676 /* IOBrowser-Bridging-Header.h */,
+				05646BA5268501B400707676 /* IOBrowser.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05646BB7268503D300707676 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				05646BB8268503D300707676 /* Release - ccache.xcconfig */,
+				05646BB9268503D300707676 /* Common.xcconfig */,
+				05646BBA268503D300707676 /* Debug - ccache.xcconfig */,
+				05646BBB268503D300707676 /* Debug.xcconfig */,
+				05646BBC268503D300707676 /* Release.xcconfig */,
+				05646BBD268503D300707676 /* README.md */,
+				05646BBE268503D300707676 /* Release - Library.xcconfig */,
+				05646BBF268503D300707676 /* Common */,
+				05646BE6268503D300707676 /* Debug - Library.xcconfig */,
+				05646BE7268503D300707676 /* .gitignore */,
+				05646BE8268503D300707676 /* Scripts */,
+				05646BEB268503D300707676 /* Debug - zld.xcconfig */,
+			);
+			name = xcconfig;
+			path = Submodules/xcconfig;
+			sourceTree = "<group>";
+		};
+		05646BBF268503D300707676 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				05646BC0268503D300707676 /* Signing.xcconfig */,
+				05646BC1268503D300707676 /* Architectures.xcconfig */,
+				05646BC2268503D300707676 /* Static-Analyzer */,
+				05646BCA268503D300707676 /* Deployment.xcconfig */,
+				05646BCB268503D300707676 /* Build-Options.xcconfig */,
+				05646BCC268503D300707676 /* Swift-Compiler.xcconfig */,
+				05646BCD268503D300707676 /* Static-Analyzer.xcconfig */,
+				05646BCE268503D300707676 /* Swift-Compiler */,
+				05646BD3268503D300707676 /* Search-Paths.xcconfig */,
+				05646BD4268503D300707676 /* Apple-LLVM.xcconfig */,
+				05646BD5268503D300707676 /* Apple-LLVM */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		05646BC2268503D300707676 /* Static-Analyzer */ = {
+			isa = PBXGroup;
+			children = (
+				05646BC3268503D300707676 /* Issues.xcconfig */,
+				05646BC4268503D300707676 /* Issues */,
+			);
+			path = "Static-Analyzer";
+			sourceTree = "<group>";
+		};
+		05646BC4268503D300707676 /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				05646BC5268503D300707676 /* Apple-APIs.xcconfig */,
+				05646BC6268503D300707676 /* Generic-Issues.xcconfig */,
+				05646BC7268503D300707676 /* Security.xcconfig */,
+				05646BC8268503D300707676 /* Objective-C.xcconfig */,
+				05646BC9268503D300707676 /* Analysis-Policy.xcconfig */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
+		05646BCE268503D300707676 /* Swift-Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				05646BCF268503D300707676 /* Warnings-Policies.xcconfig */,
+				05646BD0268503D300707676 /* Code-Generation.xcconfig */,
+				05646BD1268503D300707676 /* Language.xcconfig */,
+				05646BD2268503D300707676 /* General.xcconfig */,
+			);
+			path = "Swift-Compiler";
+			sourceTree = "<group>";
+		};
+		05646BD5268503D300707676 /* Apple-LLVM */ = {
+			isa = PBXGroup;
+			children = (
+				05646BD6268503D300707676 /* Language */,
+				05646BDA268503D300707676 /* Code-Generation.xcconfig */,
+				05646BDB268503D300707676 /* Address-Sanitizer.xcconfig */,
+				05646BDC268503D300707676 /* Language.xcconfig */,
+				05646BDD268503D300707676 /* Warnings.xcconfig */,
+				05646BDE268503D300707676 /* Undefined-Behavior-Sanitizer.xcconfig */,
+				05646BDF268503D300707676 /* Warning-Policies.xcconfig */,
+				05646BE0268503D300707676 /* Warnings */,
+				05646BE5268503D300707676 /* Preprocessing.xcconfig */,
+			);
+			path = "Apple-LLVM";
+			sourceTree = "<group>";
+		};
+		05646BD6268503D300707676 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				05646BD7268503D300707676 /* Modules.xcconfig */,
+				05646BD8268503D300707676 /* Objective-C.xcconfig */,
+				05646BD9268503D300707676 /* C++.xcconfig */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		05646BE0268503D300707676 /* Warnings */ = {
+			isa = PBXGroup;
+			children = (
+				05646BE1268503D300707676 /* Objective-C-ARC.xcconfig */,
+				05646BE2268503D300707676 /* Objective-C.xcconfig */,
+				05646BE3268503D300707676 /* C++.xcconfig */,
+				05646BE4268503D300707676 /* All-Languages.xcconfig */,
+			);
+			path = Warnings;
+			sourceTree = "<group>";
+		};
+		05646BE8268503D300707676 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				05646BE9268503D300707676 /* ccache-config.sh */,
+				05646BEA268503D300707676 /* ccache.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		0566B9642686B526006EE45A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0566B9692686B526006EE45A /* GitHubUpdates.framework */,
+				0566B96B2686B526006EE45A /* Relauncher */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0566B96C2686B531006EE45A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05646B99268501B300707676 /* IOBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05646BA8268501B400707676 /* Build configuration list for PBXNativeTarget "IOBrowser" */;
+			buildPhases = (
+				05646B96268501B300707676 /* Sources */,
+				05646B97268501B300707676 /* Frameworks */,
+				05646BED268503FE00707676 /* ShellScript */,
+				05646B98268501B300707676 /* Resources */,
+				0566B96F2686B531006EE45A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IOBrowser;
+			productName = Sensors;
+			productReference = 05646B9A268501B300707676 /* IOBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05646B92268501B300707676 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					05646B99268501B300707676 = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
+				};
+			};
+			buildConfigurationList = 05646B95268501B300707676 /* Build configuration list for PBXProject "IOBrowser" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05646B91268501B300707676;
+			productRefGroup = 05646B9B268501B300707676 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0566B9642686B526006EE45A /* Products */;
+					ProjectRef = 0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				05646B99268501B300707676 /* IOBrowser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0566B9692686B526006EE45A /* GitHubUpdates.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GitHubUpdates.framework;
+			remoteRef = 0566B9682686B526006EE45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0566B96B2686B526006EE45A /* Relauncher */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Relauncher;
+			remoteRef = 0566B96A2686B526006EE45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05646B98268501B300707676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05646BB52685020A00707676 /* MainMenu.xib in Resources */,
+				05646BFA2685072900707676 /* MainWindowController.xib in Resources */,
+				05646BF22685058700707676 /* AboutWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05646BED268503FE00707676 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    plist=\"Sensors/Info.plist\"\n    rev=$(git rev-list `git branch | grep -e \"^*\" | cut -d' ' -f 2` | wc -l)\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $rev\" \"$plist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05646B96268501B300707676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
+				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,
+				05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */,
+				05646BF72685064C00707676 /* MainWindowController.swift in Sources */,
+				05646BFE268508D200707676 /* Synchronizable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		05646BB12685020A00707676 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05646BB22685020A00707676 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		05646BF02685058700707676 /* AboutWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05646BF12685058700707676 /* Base */,
+			);
+			name = AboutWindowController.xib;
+			sourceTree = "<group>";
+		};
+		05646BF82685072900707676 /* MainWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05646BF92685072900707676 /* Base */,
+			);
+			name = MainWindowController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05646BA6268501B400707676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05646BBB268503D300707676 /* Debug.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		05646BA7268501B400707676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05646BBC268503D300707676 /* Release.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		05646BA9268501B400707676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = IOBrowser/IOBrowser.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = IOBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.IOBrowser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOBrowser/IOBrowser-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		05646BAA268501B400707676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = IOBrowser/IOBrowser.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = IOBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.IOBrowser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOBrowser/IOBrowser-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05646B95268501B300707676 /* Build configuration list for PBXProject "IOBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05646BA6268501B400707676 /* Debug */,
+				05646BA7268501B400707676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05646BA8268501B400707676 /* Build configuration list for PBXNativeTarget "IOBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05646BA9268501B400707676 /* Debug */,
+				05646BAA268501B400707676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05646B92268501B300707676 /* Project object */;
+}

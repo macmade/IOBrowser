@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="IOBrowser" customModuleProvider="target">
+            <connections>
+                <outlet property="window" destination="QvC-M9-y7g" id="3Jc-9C-AuF"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="IOBrowser" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="MainWindow" animationBehavior="default" titlebarAppearsTransparent="YES" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="800" height="515"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <value key="minSize" type="size" width="800" height="515"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="800" height="515"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-rz-hcT">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="515"/>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uRj-rz-hcT" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="WwN-si-Yl6"/>
+                    <constraint firstAttribute="trailing" secondItem="uRj-rz-hcT" secondAttribute="trailing" id="eKa-0b-qZ9"/>
+                    <constraint firstItem="uRj-rz-hcT" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="f7k-yq-eVb"/>
+                    <constraint firstAttribute="bottom" secondItem="uRj-rz-hcT" secondAttribute="bottom" id="v4a-ky-3o2"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-110" y="144"/>
+        </window>
+    </objects>
+</document>
