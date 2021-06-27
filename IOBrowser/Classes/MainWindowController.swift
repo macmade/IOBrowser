@@ -45,8 +45,11 @@ public class MainWindowController: NSWindowController
         
         IOObject.root
         {
-            self.loading = false
-            self.root    = $0
+            object in DispatchQueue.main.asyncAfter( deadline: .now() + .seconds( 1 ) )
+            {
+                self.loading = false
+                self.root    = object
+            }
         }
     }
 }

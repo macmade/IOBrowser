@@ -24,16 +24,93 @@
                 <subviews>
                     <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-rz-hcT">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="515"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-hT-10B">
+                                <rect key="frame" x="272" y="130" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="5hL-uE-GTH"/>
+                                    <constraint firstAttribute="width" constant="256" id="6VJ-yV-N1m"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="3dj-xy-IqD"/>
+                            </imageView>
+                            <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="IC6-GS-QfB">
+                                <rect key="frame" x="384" y="90" width="32" height="32"/>
+                                <connections>
+                                    <binding destination="-2" name="animate" keyPath="self.loading" id="jBT-ob-0gB"/>
+                                </connections>
+                            </progressIndicator>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qPu-hT-10B" firstAttribute="centerY" secondItem="uRj-rz-hcT" secondAttribute="centerY" id="9F0-6z-fKd"/>
+                            <constraint firstItem="IC6-GS-QfB" firstAttribute="top" secondItem="qPu-hT-10B" secondAttribute="bottom" constant="8" symbolic="YES" id="FTu-OD-2Fn"/>
+                            <constraint firstItem="IC6-GS-QfB" firstAttribute="centerX" secondItem="qPu-hT-10B" secondAttribute="centerX" id="LI3-2o-ybN"/>
+                            <constraint firstItem="qPu-hT-10B" firstAttribute="centerX" secondItem="uRj-rz-hcT" secondAttribute="centerX" id="mcE-9R-d2I"/>
+                        </constraints>
+                        <connections>
+                            <binding destination="-2" name="hidden" keyPath="self.loading" id="CbO-xf-Fon">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </visualEffectView>
+                    <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Vqs-nQ-go1">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="515"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-DB-fpR">
+                                <rect key="frame" x="272" y="130" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="DjE-O5-zmc"/>
+                                    <constraint firstAttribute="width" constant="256" id="bis-5c-89R"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="q8h-1M-tV0"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Vry-EO-Ddb">
+                                <rect key="frame" x="314" y="106" width="172" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Error loading the IO registry" id="m3U-si-pWK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vcV-DB-fpR" firstAttribute="centerX" secondItem="Vqs-nQ-go1" secondAttribute="centerX" id="2AN-4w-sZS"/>
+                            <constraint firstItem="Vry-EO-Ddb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vqs-nQ-go1" secondAttribute="leading" constant="20" symbolic="YES" id="Pnr-L4-UEG"/>
+                            <constraint firstItem="vcV-DB-fpR" firstAttribute="centerY" secondItem="Vqs-nQ-go1" secondAttribute="centerY" id="Qo5-M1-x6A"/>
+                            <constraint firstItem="Vry-EO-Ddb" firstAttribute="centerX" secondItem="vcV-DB-fpR" secondAttribute="centerX" id="TB9-tK-RPF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vry-EO-Ddb" secondAttribute="trailing" constant="20" symbolic="YES" id="Ye6-ct-ghy"/>
+                            <constraint firstItem="Vry-EO-Ddb" firstAttribute="top" secondItem="vcV-DB-fpR" secondAttribute="bottom" constant="8" symbolic="YES" id="fyM-K7-PeO"/>
+                        </constraints>
+                        <connections>
+                            <binding destination="-2" name="hidden2" keyPath="self.root" previousBinding="Bgx-al-own" id="Tws-98-2bD">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="-2" name="hidden" keyPath="self.loading" id="Bgx-al-own"/>
+                        </connections>
                     </visualEffectView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Vqs-nQ-go1" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="BnW-EJ-iPx"/>
+                    <constraint firstAttribute="trailing" secondItem="Vqs-nQ-go1" secondAttribute="trailing" id="Cxu-Ni-Ea2"/>
+                    <constraint firstAttribute="bottom" secondItem="Vqs-nQ-go1" secondAttribute="bottom" id="Nq9-Lt-hJx"/>
                     <constraint firstItem="uRj-rz-hcT" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="WwN-si-Yl6"/>
                     <constraint firstAttribute="trailing" secondItem="uRj-rz-hcT" secondAttribute="trailing" id="eKa-0b-qZ9"/>
                     <constraint firstItem="uRj-rz-hcT" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="f7k-yq-eVb"/>
                     <constraint firstAttribute="bottom" secondItem="uRj-rz-hcT" secondAttribute="bottom" id="v4a-ky-3o2"/>
+                    <constraint firstItem="Vqs-nQ-go1" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="zXB-8S-KWC"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="-110" y="144"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+    </resources>
 </document>
