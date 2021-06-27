@@ -26,6 +26,14 @@ import Cocoa
 
 public class MainWindowController: NSWindowController
 {
+    @objc private dynamic var loading = true
+    @objc private dynamic var root:     IOObject?
+    
+    @IBOutlet private var objectsController:    NSTreeController!
+    @IBOutlet private var propertiesController: NSTreeController!
+    @IBOutlet private var objectsView:          NSOutlineView!
+    @IBOutlet private var propertiesView:       NSOutlineView!
+    
     public override var windowNibName: NSNib.Name?
     {
         "MainWindowController"
@@ -34,5 +42,11 @@ public class MainWindowController: NSWindowController
     public override func windowDidLoad()
     {
         super.windowDidLoad()
+        
+        IOObject.root
+        {
+            self.loading = false
+            self.root    = $0
+        }
     }
 }

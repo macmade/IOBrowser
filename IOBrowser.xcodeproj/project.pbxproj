@@ -17,6 +17,7 @@
 		0566B96D2686B531006EE45A /* GitHubUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; };
 		0566B96E2686B531006EE45A /* GitHubUpdates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52688BE2E00E8A413 /* Preferences.swift */; };
+		05B886B92688CB1200E8A413 /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82688CB1200E8A413 /* IOObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		05646C03268527E400707676 /* IOBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IOBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GitHubUpdates.xcodeproj; path = Submodules/GitHubUpdates/GitHubUpdates.xcodeproj; sourceTree = "<group>"; };
 		05B886B52688BE2E00E8A413 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		05B886B82688CB1200E8A413 /* IOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				05646BEE2685055F00707676 /* AboutWindowController.swift */,
 				05646BAF2685020A00707676 /* ApplicationDelegate.swift */,
+				05B886B82688CB1200E8A413 /* IOObject.swift */,
 				05646BF62685064C00707676 /* MainWindowController.swift */,
 				05B886B52688BE2E00E8A413 /* Preferences.swift */,
 				05646BFD268508D200707676 /* Synchronizable.swift */,
@@ -431,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B886B92688CB1200E8A413 /* IOObject.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
 				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,
 				05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */,
