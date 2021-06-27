@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="objectsController" destination="uah-mw-q2d" id="rme-ht-dMG"/>
                 <outlet property="objectsView" destination="XY4-0b-KB7" id="yof-dW-2p4"/>
+                <outlet property="propertiesView" destination="Fob-Ee-LIc" id="jiw-mE-36m"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="3Jc-9C-AuF"/>
             </connections>
         </customObject>

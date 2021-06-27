@@ -18,6 +18,8 @@
 		0566B96E2686B531006EE45A /* GitHubUpdates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52688BE2E00E8A413 /* Preferences.swift */; };
 		05B886B92688CB1200E8A413 /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82688CB1200E8A413 /* IOObject.swift */; };
+		05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */; };
+		05B886BE2688F4AA00E8A413 /* PropertiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B886BC2688F4AA00E8A413 /* PropertiesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GitHubUpdates.xcodeproj; path = Submodules/GitHubUpdates/GitHubUpdates.xcodeproj; sourceTree = "<group>"; };
 		05B886B52688BE2E00E8A413 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		05B886B82688CB1200E8A413 /* IOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOObject.swift; sourceTree = "<group>"; };
+		05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesViewController.swift; path = IOBrowser/Classes/PropertiesViewController.swift; sourceTree = SOURCE_ROOT; };
+		05B886BD2688F4AA00E8A413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PropertiesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				05B886B82688CB1200E8A413 /* IOObject.swift */,
 				05646BF62685064C00707676 /* MainWindowController.swift */,
 				05B886B52688BE2E00E8A413 /* Preferences.swift */,
+				05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */,
 				05646BFD268508D200707676 /* Synchronizable.swift */,
 			);
 			path = Classes;
@@ -172,6 +177,7 @@
 				05646BF02685058700707676 /* AboutWindowController.xib */,
 				05646BB12685020A00707676 /* MainMenu.xib */,
 				05646BF82685072900707676 /* MainWindowController.xib */,
+				05B886BC2688F4AA00E8A413 /* PropertiesViewController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05646BB52685020A00707676 /* MainMenu.xib in Resources */,
+				05B886BE2688F4AA00E8A413 /* PropertiesViewController.xib in Resources */,
 				05646BFA2685072900707676 /* MainWindowController.xib in Resources */,
 				05646BF22685058700707676 /* AboutWindowController.xib in Resources */,
 			);
@@ -437,6 +444,7 @@
 				05B886B92688CB1200E8A413 /* IOObject.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
 				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,
+				05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */,
 				05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */,
 				05646BF72685064C00707676 /* MainWindowController.swift in Sources */,
 				05646BFE268508D200707676 /* Synchronizable.swift in Sources */,
@@ -468,6 +476,14 @@
 				05646BF92685072900707676 /* Base */,
 			);
 			name = MainWindowController.xib;
+			sourceTree = "<group>";
+		};
+		05B886BC2688F4AA00E8A413 /* PropertiesViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05B886BD2688F4AA00E8A413 /* Base */,
+			);
+			name = PropertiesViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
