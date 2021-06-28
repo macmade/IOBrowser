@@ -27,8 +27,8 @@ import Cocoa
 public class MainWindowController: NSWindowController
 {
     @objc private dynamic var loading       = true
-    @objc private dynamic var objects       = [ IOObject ]()
-    @objc private dynamic var selectedObject: IOObject?
+    @objc private dynamic var objects       = [ IODisplayItem ]()
+    @objc private dynamic var selectedObject: IODisplayItem?
     @objc private dynamic var searchText:     String?
     {
         didSet
@@ -61,36 +61,20 @@ public class MainWindowController: NSWindowController
         
         self.selectionObserver = self.treeController.observe( \.selectedObjects )
         {
-            o, c in
-            
-            self.selectedObject = self.treeController.selectedObjects.first as? IOObject
-            
-            self.propertiesView.subviews.forEach { $0.removeFromSuperview() }
-            
-            if let selected = self.selectedObject
-            {
-                let controller                                            = PropertiesViewController( object: selected )
-                controller.view.translatesAutoresizingMaskIntoConstraints = false
-                controller.view.frame                                     = self.propertiesView.bounds
-                self.propertiesViewController                             = controller
-                
-                self.propertiesView.addSubview( controller.view )
-                self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .centerX, relatedBy: .equal, toItem: self.propertiesView, attribute: .centerX, multiplier: 1, constant: 0 ) )
-                self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .centerY, relatedBy: .equal, toItem: self.propertiesView, attribute: .centerY, multiplier: 1, constant: 0 ) )
-                self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .width,   relatedBy: .equal, toItem: self.propertiesView, attribute: .width,   multiplier: 1, constant: 0 ) )
-                self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .height,  relatedBy: .equal, toItem: self.propertiesView, attribute: .height,  multiplier: 1, constant: 0 ) )
-            }
-            else
-            {
-                self.propertiesViewController = nil
-            }
+            [ weak self ] o, c in self?.selectionDidChange()
         }
         
-        IOObject.all
+        self.load()
+    }
+    
+    private func load()
+    {
+        DispatchQueue.global( qos: .userInitiated ).async
         {
-            objects in DispatchQueue.main.asyncAfter( deadline: .now() + .seconds( 1 ) )
+            let objects = IODisplayItem.all
+            
+            DispatchQueue.main.async
             {
-                self.loading = false
                 self.objects = objects
                 
                 DispatchQueue.main.async
@@ -108,8 +92,35 @@ public class MainWindowController: NSWindowController
                     }
                     
                     items.forEach { self.outlineView.expandItem( $0 ) }
+                    
+                    self.loading = false
                 }
             }
+        }
+    }
+    
+    private func selectionDidChange()
+    {
+        self.selectedObject = self.treeController.selectedObjects.first as? IODisplayItem
+        
+        self.propertiesView.subviews.forEach { $0.removeFromSuperview() }
+        
+        if let selected = self.selectedObject
+        {
+            let controller                                            = PropertiesViewController( item: selected )
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+            controller.view.frame                                     = self.propertiesView.bounds
+            self.propertiesViewController                             = controller
+            
+            self.propertiesView.addSubview( controller.view )
+            self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .centerX, relatedBy: .equal, toItem: self.propertiesView, attribute: .centerX, multiplier: 1, constant: 0 ) )
+            self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .centerY, relatedBy: .equal, toItem: self.propertiesView, attribute: .centerY, multiplier: 1, constant: 0 ) )
+            self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .width,   relatedBy: .equal, toItem: self.propertiesView, attribute: .width,   multiplier: 1, constant: 0 ) )
+            self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .height,  relatedBy: .equal, toItem: self.propertiesView, attribute: .height,  multiplier: 1, constant: 0 ) )
+        }
+        else
+        {
+            self.propertiesViewController = nil
         }
     }
     

@@ -26,8 +26,7 @@ import Cocoa
 
 public class PropertiesViewController: NSViewController
 {
-    @objc private dynamic var object:     IOObject
-    @objc private dynamic var properties: [ PropertyListNode ] = []
+    @objc private dynamic var item:       IODisplayItem
     @objc private dynamic var searchText: String?
     {
         didSet
@@ -40,9 +39,9 @@ public class PropertiesViewController: NSViewController
     @IBOutlet private               var outlineView:    NSOutlineView!
     @IBOutlet public private( set ) var searchField:    NSSearchField!
     
-    init( object: IOObject )
+    init( item: IODisplayItem )
     {
-        self.object = object
+        self.item = item
         
         super.init( nibName: nil, bundle: nil )
     }
@@ -65,11 +64,6 @@ public class PropertiesViewController: NSViewController
         [
             NSSortDescriptor( key: "key", ascending: true, selector: #selector( NSString.localizedCaseInsensitiveCompare( _: ) ) )
         ]
-        
-        self.object.properties.forEach
-        {
-            self.properties.append( PropertyListNode( key: $0.key, propertyList: $0.value ) )
-        }
     }
     
     @objc public func performFindPanelAction( _ sender: Any? )

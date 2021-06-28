@@ -28,54 +28,37 @@ import IOKit
 
 @objc public class IOObject: NSObject
 {
-    public static func all( completion: @escaping ( [ IOObject ] ) -> Void )
+    private static var rootEntry: io_registry_entry_t?
     {
-        DispatchQueue.global( qos: .userInitiated ).async
+        var port: mach_port_t = 0
+        
+        if IOMasterPort( UInt32( MACH_PORT_NULL ), &port ) != KERN_SUCCESS
         {
-            var port: mach_port_t = 0
-            
-            if IOMasterPort( UInt32( MACH_PORT_NULL ), &port ) != KERN_SUCCESS
-            {
-                completion( [] )
-                
-                return
-            }
-            
-            let service = IORegistryGetRootEntry( port )
-            
-            if service == MACH_PORT_NULL
-            {
-                completion( [] )
-                
-                return
-            }
-            
-            let objects =
-            [
-                IOObject( name: "Service",     icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOServicePlane ),
-                IOObject( name: "Power",       icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOPowerPlane ),
-                IOObject( name: "Device Tree", icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIODeviceTreePlane ),
-                IOObject( name: "Audio",       icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOAudioPlane ),
-                IOObject( name: "FireWire",    icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOFireWirePlane ),
-                IOObject( name: "USB",         icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOUSBPlane )
-            ]
-            
-            IOObjectRelease( service )
-            completion( objects.compactMap { $0 } )
+            return nil
         }
+        
+        let entry = IORegistryGetRootEntry( port )
+        
+        if entry == MACH_PORT_NULL
+        {
+            return nil
+        }
+        
+        return entry
     }
     
     @objc public private( set ) dynamic var name:       String
-    @objc public private( set ) dynamic var icon:       NSImage?
     @objc public private( set ) dynamic var children:   [ IOObject ]     = []
     @objc public private( set ) dynamic var properties: [ String : Any ] = [:]
     
-    private convenience init?( name: String, icon: NSImage?, entry: io_registry_entry_t, plane: String )
+    public convenience init?( plane: String )
     {
-        self.init( entry: entry, plane: plane )
+        guard let entry = IOObject.rootEntry else
+        {
+            return nil
+        }
         
-        self.name = name
-        self.icon = icon
+        self.init( entry: entry, plane: plane )
     }
     
     private init?( entry: io_registry_entry_t, plane: String )
@@ -119,8 +102,6 @@ import IOKit
             
             IOObjectRelease( children )
         }
-        
-        self.icon = NSImage( named: self.children.count == 0 ? "DocumentTemplate" : "FolderTemplate" )
     }
     
     public override var description: String
