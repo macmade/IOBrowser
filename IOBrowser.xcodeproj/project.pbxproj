@@ -23,6 +23,9 @@
 		05B886C02689C64F00E8A413 /* PropertyListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BF2689C64F00E8A413 /* PropertyListNode.swift */; };
 		05B88701268A382D00E8A413 /* ArrayIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88700268A382D00E8A413 /* ArrayIsEmpty.swift */; };
 		05B88705268A388700E8A413 /* ArrayIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88704268A388700E8A413 /* ArrayIsNotEmpty.swift */; };
+		05B88714268A40E300E8A413 /* StackTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 05B88713268A40E300E8A413 /* StackTemplate.pdf */; };
+		05B88717268A463800E8A413 /* FolderTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 05B88715268A463800E8A413 /* FolderTemplate.pdf */; };
+		05B88718268A463800E8A413 /* DocumentTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 05B88716268A463800E8A413 /* DocumentTemplate.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,9 @@
 		05B886BF2689C64F00E8A413 /* PropertyListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListNode.swift; sourceTree = "<group>"; };
 		05B88700268A382D00E8A413 /* ArrayIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIsEmpty.swift; sourceTree = "<group>"; };
 		05B88704268A388700E8A413 /* ArrayIsNotEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIsNotEmpty.swift; sourceTree = "<group>"; };
+		05B88713268A40E300E8A413 /* StackTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = StackTemplate.pdf; sourceTree = "<group>"; };
+		05B88715268A463800E8A413 /* FolderTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = FolderTemplate.pdf; sourceTree = "<group>"; };
+		05B88716268A463800E8A413 /* DocumentTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DocumentTemplate.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		05646BB02685020A00707676 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				05B88706268A3ECB00E8A413 /* Images */,
 				05646BF02685058700707676 /* AboutWindowController.xib */,
 				05646BB12685020A00707676 /* MainMenu.xib */,
 				05646BF82685072900707676 /* MainWindowController.xib */,
@@ -333,6 +340,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		05B88706268A3ECB00E8A413 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				05B88716268A463800E8A413 /* DocumentTemplate.pdf */,
+				05B88715268A463800E8A413 /* FolderTemplate.pdf */,
+				05B88713268A40E300E8A413 /* StackTemplate.pdf */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,7 +435,10 @@
 			files = (
 				05646BB52685020A00707676 /* MainMenu.xib in Resources */,
 				05B886BE2688F4AA00E8A413 /* PropertiesViewController.xib in Resources */,
+				05B88717268A463800E8A413 /* FolderTemplate.pdf in Resources */,
 				05646BFA2685072900707676 /* MainWindowController.xib in Resources */,
+				05B88718268A463800E8A413 /* DocumentTemplate.pdf in Resources */,
+				05B88714268A40E300E8A413 /* StackTemplate.pdf in Resources */,
 				05646BF22685058700707676 /* AboutWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

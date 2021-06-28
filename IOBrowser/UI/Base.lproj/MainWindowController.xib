@@ -137,23 +137,53 @@
                                                                             <rect key="frame" x="18" y="0.0" width="203" height="24"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="q0l-J3-MrT">
-                                                                                    <rect key="frame" x="-2" y="4" width="207" height="16"/>
-                                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="tmI-AL-xas">
-                                                                                        <font key="font" usesAppearanceFont="YES"/>
-                                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                                    </textFieldCell>
-                                                                                    <connections>
-                                                                                        <binding destination="sZ6-tX-QHU" name="toolTip" keyPath="objectValue.name" id="Uxd-DD-GLR"/>
-                                                                                        <binding destination="sZ6-tX-QHU" name="value" keyPath="objectValue.name" id="wld-yf-73V"/>
-                                                                                    </connections>
-                                                                                </textField>
+                                                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfs-Ga-gn4">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="24"/>
+                                                                                    <subviews>
+                                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYt-We-f1s">
+                                                                                            <rect key="frame" x="0.0" y="2" width="20" height="20"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="width" constant="20" id="PpO-qI-l0B"/>
+                                                                                                <constraint firstAttribute="height" constant="20" id="h5n-A1-J5K"/>
+                                                                                            </constraints>
+                                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="9c5-jU-Abv"/>
+                                                                                            <connections>
+                                                                                                <binding destination="sZ6-tX-QHU" name="hidden" keyPath="objectValue.icon" id="0CQ-Vp-hQj">
+                                                                                                    <dictionary key="options">
+                                                                                                        <string key="NSValueTransformerName">NSIsNil</string>
+                                                                                                    </dictionary>
+                                                                                                </binding>
+                                                                                                <binding destination="sZ6-tX-QHU" name="value" keyPath="objectValue.icon" id="zsk-gH-4hw"/>
+                                                                                            </connections>
+                                                                                        </imageView>
+                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="q0l-J3-MrT">
+                                                                                            <rect key="frame" x="26" y="5" width="179" height="14"/>
+                                                                                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="tmI-AL-xas">
+                                                                                                <font key="font" metaFont="smallSystem"/>
+                                                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                            <connections>
+                                                                                                <binding destination="sZ6-tX-QHU" name="toolTip" keyPath="objectValue.name" id="Uxd-DD-GLR"/>
+                                                                                                <binding destination="sZ6-tX-QHU" name="value" keyPath="objectValue.name" id="wld-yf-73V"/>
+                                                                                            </connections>
+                                                                                        </textField>
+                                                                                    </subviews>
+                                                                                    <visibilityPriorities>
+                                                                                        <integer value="1000"/>
+                                                                                        <integer value="1000"/>
+                                                                                    </visibilityPriorities>
+                                                                                    <customSpacing>
+                                                                                        <real value="3.4028234663852886e+38"/>
+                                                                                        <real value="3.4028234663852886e+38"/>
+                                                                                    </customSpacing>
+                                                                                </stackView>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="trailing" secondItem="q0l-J3-MrT" secondAttribute="trailing" id="47W-I9-MWg"/>
-                                                                                <constraint firstItem="q0l-J3-MrT" firstAttribute="centerY" secondItem="sZ6-tX-QHU" secondAttribute="centerY" id="K9z-J7-jDZ"/>
-                                                                                <constraint firstItem="q0l-J3-MrT" firstAttribute="leading" secondItem="sZ6-tX-QHU" secondAttribute="leading" id="NzQ-Px-qA4"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="Kfs-Ga-gn4" secondAttribute="bottom" id="DMA-4j-MgW"/>
+                                                                                <constraint firstItem="Kfs-Ga-gn4" firstAttribute="leading" secondItem="sZ6-tX-QHU" secondAttribute="leading" id="GBE-cR-3qw"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="Kfs-Ga-gn4" secondAttribute="trailing" id="WfN-He-bpc"/>
+                                                                                <constraint firstItem="Kfs-Ga-gn4" firstAttribute="top" secondItem="sZ6-tX-QHU" secondAttribute="top" id="h36-1A-axD"/>
                                                                             </constraints>
                                                                             <connections>
                                                                                 <outlet property="textField" destination="q0l-J3-MrT" id="ndD-fY-f9V"/>

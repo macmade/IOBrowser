@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-import Foundation
+import Cocoa
 import CoreFoundation
 import IOKit
 
@@ -52,12 +52,12 @@ import IOKit
             
             let objects =
             [
-                IOObject( name: "Service",     entry: service, plane: kIOServicePlane ),
-                IOObject( name: "Power",       entry: service, plane: kIOPowerPlane ),
-                IOObject( name: "Device Tree", entry: service, plane: kIODeviceTreePlane ),
-                IOObject( name: "Audio",       entry: service, plane: kIOAudioPlane ),
-                IOObject( name: "FireWire",    entry: service, plane: kIOFireWirePlane ),
-                IOObject( name: "USB",         entry: service, plane: kIOUSBPlane )
+                IOObject( name: "Service",     icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOServicePlane ),
+                IOObject( name: "Power",       icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOPowerPlane ),
+                IOObject( name: "Device Tree", icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIODeviceTreePlane ),
+                IOObject( name: "Audio",       icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOAudioPlane ),
+                IOObject( name: "FireWire",    icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOFireWirePlane ),
+                IOObject( name: "USB",         icon: NSImage( named: "StackTemplate" ), entry: service, plane: kIOUSBPlane )
             ]
             
             IOObjectRelease( service )
@@ -66,14 +66,16 @@ import IOKit
     }
     
     @objc public private( set ) dynamic var name:       String
+    @objc public private( set ) dynamic var icon:       NSImage?
     @objc public private( set ) dynamic var children:   [ IOObject ]     = []
     @objc public private( set ) dynamic var properties: [ String : Any ] = [:]
     
-    private convenience init?( name: String, entry: io_registry_entry_t, plane: String )
+    private convenience init?( name: String, icon: NSImage?, entry: io_registry_entry_t, plane: String )
     {
         self.init( entry: entry, plane: plane )
         
         self.name = name
+        self.icon = icon
     }
     
     private init?( entry: io_registry_entry_t, plane: String )
@@ -117,6 +119,8 @@ import IOKit
             
             IOObjectRelease( children )
         }
+        
+        self.icon = NSImage( named: self.children.count == 0 ? "DocumentTemplate" : "FolderTemplate" )
     }
     
     public override var description: String
