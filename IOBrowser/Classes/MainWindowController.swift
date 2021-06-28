@@ -105,10 +105,14 @@ public class MainWindowController: NSWindowController
             self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .centerY, relatedBy: .equal, toItem: self.propertiesView, attribute: .centerY, multiplier: 1, constant: 0 ) )
             self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .width,   relatedBy: .equal, toItem: self.propertiesView, attribute: .width,   multiplier: 1, constant: 0 ) )
             self.propertiesView.addConstraint( NSLayoutConstraint( item: controller.view, attribute: .height,  relatedBy: .equal, toItem: self.propertiesView, attribute: .height,  multiplier: 1, constant: 0 ) )
+            
+            self.searchField.nextKeyView       = controller.searchField
+            controller.searchField.nextKeyView = self.searchField
         }
         else
         {
             self.propertiesViewController = nil
+            self.searchField.nextKeyView  = nil
         }
     }
     
