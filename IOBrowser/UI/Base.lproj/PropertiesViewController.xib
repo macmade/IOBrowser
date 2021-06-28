@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="PropertiesViewController" customModule="IOBrowser" customModuleProvider="target">
             <connections>
                 <outlet property="outlineView" destination="IWY-E5-zC4" id="mW9-1a-ppP"/>
+                <outlet property="searchField" destination="IjX-z9-GPG" id="G4h-iW-KzD"/>
                 <outlet property="treeController" destination="9Ko-ok-zmX" id="TcC-0j-3Ct"/>
                 <outlet property="view" destination="c22-O7-iKe" id="x1t-Nz-iLf"/>
             </connections>
@@ -19,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autoresizesSubviews="NO" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGN-Wg-aRY">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                    <rect key="frame" x="0.0" y="43" width="600" height="357"/>
                     <clipView key="contentView" autoresizesSubviews="NO" id="PKt-ec-77m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="357"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" headerView="orK-kR-OYs" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="S3g-Eq-j07" id="IWY-E5-zC4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="329"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="17" height="0.0"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -176,11 +177,35 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
+                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ahd-rb-0kF">
+                    <rect key="frame" x="0.0" y="40" width="600" height="5"/>
+                </box>
+                <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjX-z9-GPG">
+                    <rect key="frame" x="10" y="10" width="580" height="22"/>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="U1H-qJ-Uwo">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.searchText" id="Au8-vA-9sJ">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </searchField>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="hGN-Wg-aRY" secondAttribute="bottom" id="4lx-US-lHz"/>
+                <constraint firstItem="IjX-z9-GPG" firstAttribute="top" secondItem="Ahd-rb-0kF" secondAttribute="bottom" constant="10" id="5pc-yp-Jyi"/>
                 <constraint firstItem="hGN-Wg-aRY" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="GWi-ho-bIU"/>
+                <constraint firstAttribute="trailing" secondItem="Ahd-rb-0kF" secondAttribute="trailing" id="Ord-I0-LwF"/>
+                <constraint firstItem="Ahd-rb-0kF" firstAttribute="top" secondItem="hGN-Wg-aRY" secondAttribute="bottom" id="Wig-AL-YM5"/>
+                <constraint firstAttribute="bottom" secondItem="IjX-z9-GPG" secondAttribute="bottom" constant="10" id="YOo-zZ-yqm"/>
+                <constraint firstAttribute="trailing" secondItem="IjX-z9-GPG" secondAttribute="trailing" constant="10" id="ddZ-kI-Bsd"/>
                 <constraint firstItem="hGN-Wg-aRY" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="gMG-xX-IaZ"/>
+                <constraint firstItem="Ahd-rb-0kF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="hBO-d3-gVI"/>
+                <constraint firstItem="IjX-z9-GPG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="qGE-Ii-zAy"/>
                 <constraint firstAttribute="trailing" secondItem="hGN-Wg-aRY" secondAttribute="trailing" id="yYs-7k-a91"/>
             </constraints>
             <point key="canvasLocation" x="-22" y="154"/>

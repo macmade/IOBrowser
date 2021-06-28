@@ -26,11 +26,19 @@ import Cocoa
 
 public class PropertiesViewController: NSViewController
 {
-    @objc public private( set ) dynamic var object:     IOObject
-    @objc public private( set ) dynamic var properties: [ PropertyListNode ] = []
+    @objc private dynamic var object:     IOObject
+    @objc private dynamic var properties: [ PropertyListNode ] = []
+    @objc private dynamic var searchText: String?
+    {
+        didSet
+        {
+            print( self.searchText ?? "<nil>" )
+        }
+    }
     
-    @IBOutlet private var treeController: NSTreeController!
-    @IBOutlet private var outlineView:    NSOutlineView!
+    @IBOutlet private               var treeController: NSTreeController!
+    @IBOutlet private               var outlineView:    NSOutlineView!
+    @IBOutlet public private( set ) var searchField:    NSSearchField!
     
     init( object: IOObject )
     {
@@ -62,5 +70,10 @@ public class PropertiesViewController: NSViewController
         {
             self.properties.append( PropertyListNode( key: $0.key, propertyList: $0.value ) )
         }
+    }
+    
+    @objc public func performFindPanelAction( _ sender: Any? )
+    {
+        self.view.window?.makeFirstResponder( self.searchField )
     }
 }
