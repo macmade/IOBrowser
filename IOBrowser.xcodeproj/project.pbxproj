@@ -20,6 +20,7 @@
 		05B886B92688CB1200E8A413 /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82688CB1200E8A413 /* IOObject.swift */; };
 		05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */; };
 		05B886BE2688F4AA00E8A413 /* PropertiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B886BC2688F4AA00E8A413 /* PropertiesViewController.xib */; };
+		05B886C02689C64F00E8A413 /* PropertyListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BF2689C64F00E8A413 /* PropertyListNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		05B886B82688CB1200E8A413 /* IOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOObject.swift; sourceTree = "<group>"; };
 		05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesViewController.swift; path = IOBrowser/Classes/PropertiesViewController.swift; sourceTree = SOURCE_ROOT; };
 		05B886BD2688F4AA00E8A413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PropertiesViewController.xib; sourceTree = "<group>"; };
+		05B886BF2689C64F00E8A413 /* PropertyListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				05646BF62685064C00707676 /* MainWindowController.swift */,
 				05B886B52688BE2E00E8A413 /* Preferences.swift */,
 				05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */,
+				05B886BF2689C64F00E8A413 /* PropertyListNode.swift */,
 				05646BFD268508D200707676 /* Synchronizable.swift */,
 			);
 			path = Classes;
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B886C02689C64F00E8A413 /* PropertyListNode.swift in Sources */,
 				05B886B92688CB1200E8A413 /* IOObject.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
 				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,

@@ -31,9 +31,9 @@ public class MainWindowController: NSWindowController
     @objc private dynamic var root:           IOObject?
     @objc private dynamic var selectedObject: IOObject?
     
-    @IBOutlet private var objectsController:    NSTreeController!
-    @IBOutlet private var objectsView:          NSOutlineView!
-    @IBOutlet private var propertiesView:       NSView!
+    @IBOutlet private var treeController: NSTreeController!
+    @IBOutlet private var outlineView:    NSOutlineView!
+    @IBOutlet private var propertiesView: NSView!
     
     private var selectionObserver:        NSKeyValueObservation?
     private var propertiesViewController: PropertiesViewController?
@@ -47,16 +47,16 @@ public class MainWindowController: NSWindowController
     {
         super.windowDidLoad()
         
-        self.objectsController.sortDescriptors =
+        self.treeController.sortDescriptors =
         [
             NSSortDescriptor( key: "name", ascending: true, selector: #selector( NSString.localizedCaseInsensitiveCompare( _: ) ) )
         ]
         
-        self.selectionObserver = self.objectsController.observe( \.selectedObjects )
+        self.selectionObserver = self.treeController.observe( \.selectedObjects )
         {
             o, c in
             
-            self.selectedObject = self.objectsController.selectedObjects.first as? IOObject
+            self.selectedObject = self.treeController.selectedObjects.first as? IOObject
             
             self.propertiesView.subviews.forEach { $0.removeFromSuperview() }
             
@@ -88,15 +88,15 @@ public class MainWindowController: NSWindowController
                 
                 DispatchQueue.main.async
                 {
-                    guard let item = self.objectsView.item( atRow: 0 ) as? NSTreeNode else
+                    guard let item = self.outlineView.item( atRow: 0 ) as? NSTreeNode else
                     {
                         return
                     }
                     
-                    self.objectsView.expandItem( item )
+                    self.outlineView.expandItem( item )
                     item.children?.forEach
                     {
-                        self.objectsView.expandItem( $0 )
+                        self.outlineView.expandItem( $0 )
                     }
                 }
             }

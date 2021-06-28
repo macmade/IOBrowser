@@ -26,7 +26,11 @@ import Cocoa
 
 public class PropertiesViewController: NSViewController
 {
-    @objc public private( set ) dynamic var object: IOObject
+    @objc public private( set ) dynamic var object:     IOObject
+    @objc public private( set ) dynamic var properties: [ PropertyListNode ] = []
+    
+    @IBOutlet private var treeController: NSTreeController!
+    @IBOutlet private var outlineView:    NSOutlineView!
     
     init( object: IOObject )
     {
@@ -48,5 +52,15 @@ public class PropertiesViewController: NSViewController
     public override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.treeController.sortDescriptors =
+        [
+            NSSortDescriptor( key: "key", ascending: true, selector: #selector( NSString.localizedCaseInsensitiveCompare( _: ) ) )
+        ]
+        
+        self.object.properties.forEach
+        {
+            self.properties.append( PropertyListNode( key: $0.key, propertyList: $0.value ) )
+        }
     }
 }
