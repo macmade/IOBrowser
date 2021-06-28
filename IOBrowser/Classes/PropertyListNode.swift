@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-import Foundation
+import Cocoa
 
 public class PropertyListNode: NSObject
 {
@@ -30,6 +30,7 @@ public class PropertyListNode: NSObject
     @objc public private( set ) dynamic var value:        String
     @objc public private( set ) dynamic var type:         String
     @objc public private( set ) dynamic var propertyList: Any?
+    @objc public private( set ) dynamic var textColor:    NSColor
     @objc public private( set ) dynamic var allChildren = [ PropertyListNode ]()
     @objc public private( set ) dynamic var children    = [ PropertyListNode ]()
     
@@ -51,6 +52,7 @@ public class PropertyListNode: NSObject
         self.type         = info.type
         self.value        = info.value
         self.propertyList = propertyList
+        self.textColor    = NSColor.controlTextColor
         
         super.init()
         
@@ -64,6 +66,8 @@ public class PropertyListNode: NSObject
                 
                 i += 1
             }
+            
+            self.textColor = NSColor.secondaryLabelColor
         }
         else if let set = propertyList as? NSOrderedSet
         {
@@ -75,6 +79,8 @@ public class PropertyListNode: NSObject
                 
                 i += 1
             }
+            
+            self.textColor = NSColor.secondaryLabelColor
         }
         else if let set = propertyList as? NSSet
         {
@@ -86,10 +92,14 @@ public class PropertyListNode: NSObject
                 
                 i += 1
             }
+            
+            self.textColor = NSColor.secondaryLabelColor
         }
         else if let dict = propertyList as? NSDictionary
         {
             dict.forEach { self.addChild( key: "\( $0.key )", propertyList: $0.value ) }
+            
+            self.textColor = NSColor.secondaryLabelColor
         }
         else if let tuple = propertyList as? ( Any, [ AnyHashable : Any ] )
         {
@@ -98,6 +108,8 @@ public class PropertyListNode: NSObject
             self.value = info.value
             
             tuple.1.forEach { self.addChild( key: "\( $0.key )", propertyList: $0.value ) }
+            
+            self.textColor = NSColor.secondaryLabelColor
         }
         else if let tuple = propertyList as? ( Any, [ Any ] )
         {
@@ -112,6 +124,8 @@ public class PropertyListNode: NSObject
                 
                 i += 1
             }
+            
+            self.textColor = NSColor.secondaryLabelColor
         }
     }
     

@@ -141,6 +141,7 @@
                                                         <connections>
                                                             <binding destination="edm-bd-opd" name="value" keyPath="objectValue.value" id="mW9-aD-ZY6"/>
                                                             <binding destination="edm-bd-opd" name="toolTip" keyPath="objectValue.value" id="xOP-EZ-qD2"/>
+                                                            <binding destination="edm-bd-opd" name="textColor" keyPath="objectValue.textColor" id="aHA-Oo-CPZ"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
