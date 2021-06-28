@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="height" constant="256" id="5hL-uE-GTH"/>
                                     <constraint firstAttribute="width" constant="256" id="6VJ-yV-N1m"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSDefaultApplicationIcon" catalog="system" id="3dj-xy-IqD"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="3dj-xy-IqD"/>
                             </imageView>
                             <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="IC6-GS-QfB">
                                 <rect key="frame" x="384" y="110" width="32" height="32"/>
@@ -67,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="256" id="DjE-O5-zmc"/>
                                     <constraint firstAttribute="width" constant="256" id="bis-5c-89R"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSDefaultApplicationIcon" catalog="system" id="q8h-1M-tV0"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="q8h-1M-tV0"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Vry-EO-Ddb">
                                 <rect key="frame" x="314" y="126" width="172" height="16"/>
@@ -244,21 +244,6 @@
                                 <rect key="frame" x="241" y="0.0" width="559" height="515"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79h-Hb-9Ys">
-                                        <rect key="frame" x="239" y="250" width="80" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="No selection" id="pxN-XV-Dbj">
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                        <connections>
-                                            <binding destination="-2" name="hidden" keyPath="self.selectedObject" id="tcM-ZY-aKQ">
-                                                <dictionary key="options">
-                                                    <string key="NSValueTransformerName">NSIsNotNil</string>
-                                                </dictionary>
-                                            </binding>
-                                        </connections>
-                                    </textField>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Fob-Ee-LIc">
                                         <rect key="frame" x="0.0" y="0.0" width="559" height="515"/>
                                         <connections>
@@ -269,15 +254,58 @@
                                             </binding>
                                         </connections>
                                     </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="ohx-UO-vcs">
+                                        <rect key="frame" x="0.0" y="0.0" width="559" height="515"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-LB-WFV">
+                                                <rect key="frame" x="151" y="150" width="256" height="256"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="256" id="XDY-Uk-oB7"/>
+                                                    <constraint firstAttribute="width" constant="256" id="xns-cV-Xmq"/>
+                                                </constraints>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="bEf-WC-aqH"/>
+                                            </imageView>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="79h-Hb-9Ys">
+                                                <rect key="frame" x="239" y="126" width="80" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="No selection" id="pxN-XV-Dbj">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <binding destination="-2" name="hidden" keyPath="self.selectedObject" id="tcM-ZY-aKQ">
+                                                        <dictionary key="options">
+                                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="79h-Hb-9Ys" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ohx-UO-vcs" secondAttribute="leading" constant="20" symbolic="YES" id="EBp-j0-keu"/>
+                                            <constraint firstItem="RbN-LB-WFV" firstAttribute="centerX" secondItem="ohx-UO-vcs" secondAttribute="centerX" id="Kis-h7-yy0"/>
+                                            <constraint firstItem="79h-Hb-9Ys" firstAttribute="centerX" secondItem="RbN-LB-WFV" secondAttribute="centerX" id="M61-A5-yqq"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="79h-Hb-9Ys" secondAttribute="trailing" constant="20" symbolic="YES" id="VFr-et-7Oc"/>
+                                            <constraint firstItem="RbN-LB-WFV" firstAttribute="centerY" secondItem="ohx-UO-vcs" secondAttribute="centerY" constant="-20" id="f83-hK-gtl"/>
+                                            <constraint firstItem="79h-Hb-9Ys" firstAttribute="top" secondItem="RbN-LB-WFV" secondAttribute="bottom" constant="8" symbolic="YES" id="mWj-5J-mlt"/>
+                                        </constraints>
+                                        <connections>
+                                            <binding destination="-2" name="hidden" keyPath="self.selectedObject" id="z6s-ug-JEQ">
+                                                <dictionary key="options">
+                                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </customView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="79h-Hb-9Ys" firstAttribute="centerY" secondItem="hrS-xB-lds" secondAttribute="centerY" id="2gC-9g-4A7"/>
+                                    <constraint firstItem="ohx-UO-vcs" firstAttribute="leading" secondItem="hrS-xB-lds" secondAttribute="leading" id="40e-uG-0Pc"/>
+                                    <constraint firstAttribute="trailing" secondItem="ohx-UO-vcs" secondAttribute="trailing" id="57x-Wv-Pzj"/>
                                     <constraint firstAttribute="trailing" secondItem="Fob-Ee-LIc" secondAttribute="trailing" id="9cF-r2-QYM"/>
-                                    <constraint firstItem="79h-Hb-9Ys" firstAttribute="centerX" secondItem="hrS-xB-lds" secondAttribute="centerX" id="9td-sf-GuI"/>
                                     <constraint firstItem="Fob-Ee-LIc" firstAttribute="top" secondItem="hrS-xB-lds" secondAttribute="top" id="JYa-nf-jyK"/>
-                                    <constraint firstItem="79h-Hb-9Ys" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hrS-xB-lds" secondAttribute="leading" constant="20" symbolic="YES" id="K1r-jH-G5e"/>
                                     <constraint firstItem="Fob-Ee-LIc" firstAttribute="leading" secondItem="hrS-xB-lds" secondAttribute="leading" id="MDh-7I-cw0"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="79h-Hb-9Ys" secondAttribute="trailing" constant="20" symbolic="YES" id="jvj-xD-Dq1"/>
+                                    <constraint firstItem="ohx-UO-vcs" firstAttribute="top" secondItem="hrS-xB-lds" secondAttribute="top" id="PIE-d8-cEW"/>
+                                    <constraint firstAttribute="bottom" secondItem="ohx-UO-vcs" secondAttribute="bottom" id="TgA-Qw-ZHd"/>
                                     <constraint firstAttribute="bottom" secondItem="Fob-Ee-LIc" secondAttribute="bottom" id="tq4-J6-t0M"/>
                                 </constraints>
                             </customView>
@@ -327,7 +355,7 @@
         </treeController>
     </objects>
     <resources>
-        <image name="NSDefaultApplicationIcon" catalog="system" width="32" height="32"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
         <image name="StackTemplate" width="150" height="150"/>
     </resources>
 </document>

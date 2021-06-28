@@ -10,6 +10,7 @@
 		054776E4268A5C87005864F8 /* IODisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776E3268A5C87005864F8 /* IODisplayItem.swift */; };
 		054776F1268A7BED005864F8 /* PropertyListFormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */; };
 		054776F4268A7BFA005864F8 /* PropertyListFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054776F2268A7BFA005864F8 /* PropertyListFormatViewController.xib */; };
+		054776F6268A85B6005864F8 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 054776F5268A85B6005864F8 /* Icon.icns */; };
 		05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BAF2685020A00707676 /* ApplicationDelegate.swift */; };
 		05646BB52685020A00707676 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
 		05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
@@ -65,6 +66,7 @@
 		054776E3268A5C87005864F8 /* IODisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IODisplayItem.swift; sourceTree = "<group>"; };
 		054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListFormatViewController.swift; sourceTree = "<group>"; };
 		054776F3268A7BFA005864F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PropertyListFormatViewController.xib; sourceTree = "<group>"; };
+		054776F5268A85B6005864F8 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		05646B9A268501B300707676 /* IOBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05646BA4268501B400707676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05646BA5268501B400707676 /* IOBrowser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOBrowser.entitlements; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		05B88706268A3ECB00E8A413 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				054776F5268A85B6005864F8 /* Icon.icns */,
 				05B88716268A463800E8A413 /* DocumentTemplate.pdf */,
 				05B88715268A463800E8A413 /* FolderTemplate.pdf */,
 				05B88713268A40E300E8A413 /* StackTemplate.pdf */,
@@ -445,6 +448,7 @@
 				05646BFA2685072900707676 /* MainWindowController.xib in Resources */,
 				05B88718268A463800E8A413 /* DocumentTemplate.pdf in Resources */,
 				05B88714268A40E300E8A413 /* StackTemplate.pdf in Resources */,
+				054776F6268A85B6005864F8 /* Icon.icns in Resources */,
 				054776F4268A7BFA005864F8 /* PropertyListFormatViewController.xib in Resources */,
 				05646BF22685058700707676 /* AboutWindowController.xib in Resources */,
 			);
