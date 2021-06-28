@@ -12,7 +12,11 @@ IOBrowser
 
 ### About
 
-...
+![Logo](Assets/Logo.png "Logo")
+
+A macOS application for browsing the IOKit registry.
+
+![Screenshot](Assets/Screenshot.png "Screenshot")
 
 License
 -------
