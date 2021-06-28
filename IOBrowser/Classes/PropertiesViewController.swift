@@ -73,6 +73,57 @@ public class PropertiesViewController: NSViewController
         self.view.window?.makeFirstResponder( self.searchField )
     }
     
+    @objc public func saveDocument( _ sender: Any? )
+    {
+        self.saveDocumentAs( sender )
+    }
+    
+    @objc public func saveDocumentAs( _ sender: Any? )
+    {
+        if self.item.properties.count == 0
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        guard let window = self.view.window else
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        let panel                  = NSSavePanel()
+        panel.allowedFileTypes     = [ "plist" ]
+        panel.canCreateDirectories = true
+        let formatController       = PropertyListFormatViewController()
+        panel.accessoryView        = formatController.view
+        
+        panel.beginSheetModal( for: window )
+        {
+            guard let url = panel.url, $0 == .OK else
+            {
+                return
+            }
+            
+            do
+            {
+                let data = try PropertyListSerialization.data(
+                    fromPropertyList: self.item.object.properties,
+                    format:           formatController.format,
+                    options:          0
+                )
+                
+                try data.write( to: url )
+            }
+            catch let error
+            {
+                NSAlert( error: error ).runModal()
+            }
+        }
+    }
+    
     @objc private func expandAll()
     {
         self.outlineView.expandItem( nil, expandChildren: true )
