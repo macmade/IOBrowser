@@ -26,11 +26,12 @@ import Cocoa
 
 public class IODisplayItem: NSObject
 {
-    @objc public private( set ) dynamic var object:     IOObject
-    @objc public private( set ) dynamic var name:       String
-    @objc public private( set ) dynamic var icon:       NSImage?
-    @objc public private( set ) dynamic var children:   [ IODisplayItem ]
-    @objc public private( set ) dynamic var properties: [ PropertyListNode ]
+    @objc public private( set ) dynamic var object:      IOObject
+    @objc public private( set ) dynamic var name:        String
+    @objc public private( set ) dynamic var icon:        NSImage?
+    @objc public private( set ) dynamic var allChildren: [ IODisplayItem ]
+    @objc public private( set ) dynamic var children:    [ IODisplayItem ]
+    @objc public private( set ) dynamic var properties:  [ PropertyListNode ]
     
     public static var all: [ IODisplayItem ]
     {
@@ -62,10 +63,36 @@ public class IODisplayItem: NSObject
             return nil
         }
         
-        self.object     = object
-        self.name       = name
-        self.icon       = icon
-        self.children   = object.children.compactMap { IODisplayItem( object: $0 ) }
-        self.properties = object.properties.map { PropertyListNode( key: $0.key, propertyList: $0.value ) }
+        self.object      = object
+        self.name        = name
+        self.icon        = icon
+        self.allChildren = object.children.compactMap { IODisplayItem( object: $0 ) }
+        self.children    = self.allChildren
+        self.properties  = object.properties.map { PropertyListNode( key: $0.key, propertyList: $0.value ) }
+    }
+    
+    public var predicate: NSPredicate?
+    {
+        didSet
+        {
+            self.filter( predicate: self.predicate )
+        }
+    }
+    
+    private func filter( predicate: NSPredicate? )
+    {
+        self.allChildren.forEach { $0.predicate = predicate }
+        
+        guard let predicate = predicate else
+        {
+            self.children = self.allChildren
+            
+            return
+        }
+        
+        self.children = self.allChildren.compactMap
+        {
+            predicate.evaluate( with: $0 ) || $0.children.count > 0 ? $0 : nil
+        }
     }
 }

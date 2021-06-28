@@ -33,7 +33,7 @@ public class MainWindowController: NSWindowController
     {
         didSet
         {
-            print( self.searchText ?? "<nil>" )
+            self.filter( text: self.searchText )
         }
     }
     
@@ -79,19 +79,7 @@ public class MainWindowController: NSWindowController
                 
                 DispatchQueue.main.async
                 {
-                    self.outlineView.collapseItem( nil, collapseChildren: true )
-                    
-                    var items = [ Any ]()
-                    
-                    for i in 0 ..< objects.count
-                    {
-                        if let item = self.outlineView.item( atRow: i )
-                        {
-                            items.append( item )
-                        }
-                    }
-                    
-                    items.forEach { self.outlineView.expandItem( $0 ) }
+                    self.expandFirstLevel()
                     
                     self.loading = false
                 }
@@ -122,6 +110,59 @@ public class MainWindowController: NSWindowController
         {
             self.propertiesViewController = nil
         }
+    }
+    
+    private func filter( text: String? )
+    {
+        self.collapseAll()
+        
+        let predicate: NSPredicate? =
+        {
+            guard let text = text, text.count > 0 else
+            {
+                return nil
+            }
+            
+            return NSPredicate( format: "name contains[c] %@", text )
+        }()
+        
+        self.objects.forEach { $0.predicate = predicate }
+        
+        if predicate == nil
+        {
+            self.expandFirstLevel()
+        }
+        else
+        {
+            self.expandAll()
+        }
+    }
+    
+    @objc private func expandFirstLevel()
+    {
+        self.outlineView.collapseItem( nil, collapseChildren: true )
+        
+        var items = [ Any ]()
+        
+        for i in 0 ..< objects.count
+        {
+            if let item = self.outlineView.item( atRow: i )
+            {
+                items.append( item )
+            }
+        }
+        
+        items.forEach { self.outlineView.expandItem( $0 ) }
+    }
+    
+    @objc private func expandAll()
+    {
+        self.outlineView.expandItem( nil, expandChildren: true )
+    }
+    
+    @objc private func collapseAll()
+    {
+        self.outlineView.collapseItem( nil, collapseChildren: true )
     }
     
     @objc public func performFindPanelAction( _ sender: Any? )
