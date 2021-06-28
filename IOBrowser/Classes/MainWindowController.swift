@@ -27,7 +27,7 @@ import Cocoa
 public class MainWindowController: NSWindowController
 {
     @objc private dynamic var loading       = true
-    @objc private dynamic var objects       = [ IODisplayItem ]()
+    @objc private dynamic var items         = [ IODisplayItem ]()
     @objc private dynamic var selectedObject: IODisplayItem?
     @objc private dynamic var searchText:     String?
     {
@@ -71,11 +71,11 @@ public class MainWindowController: NSWindowController
     {
         DispatchQueue.global( qos: .userInitiated ).async
         {
-            let objects = IODisplayItem.all
+            let items = IODisplayItem.all
             
             DispatchQueue.main.async
             {
-                self.objects = objects
+                self.items = items
                 
                 DispatchQueue.main.async
                 {
@@ -89,6 +89,8 @@ public class MainWindowController: NSWindowController
     
     private func selectionDidChange()
     {
+        self.selectedObject?.properties.forEach { $0.predicate = nil }
+        
         self.selectedObject = self.treeController.selectedObjects.first as? IODisplayItem
         
         self.propertiesView.subviews.forEach { $0.removeFromSuperview() }
@@ -130,7 +132,7 @@ public class MainWindowController: NSWindowController
             return NSPredicate( format: "name contains[c] %@", text )
         }()
         
-        self.objects.forEach { $0.predicate = predicate }
+        self.items.forEach { $0.predicate = predicate }
         
         if predicate == nil
         {
@@ -148,7 +150,7 @@ public class MainWindowController: NSWindowController
         
         var items = [ Any ]()
         
-        for i in 0 ..< objects.count
+        for i in 0 ..< self.items.count
         {
             if let item = self.outlineView.item( atRow: i )
             {

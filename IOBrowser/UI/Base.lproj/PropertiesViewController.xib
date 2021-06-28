@@ -212,7 +212,7 @@
         </customView>
         <treeController childrenKeyPath="children" avoidsEmptySelection="NO" selectsInsertedObjects="NO" id="9Ko-ok-zmX">
             <connections>
-                <binding destination="-2" name="contentArray" keyPath="self.item.properties" id="NFh-Pu-Ktb"/>
+                <binding destination="-2" name="contentArray" keyPath="self.properties" id="2zT-Xe-SmZ"/>
             </connections>
         </treeController>
     </objects>

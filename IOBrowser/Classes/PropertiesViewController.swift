@@ -27,11 +27,12 @@ import Cocoa
 public class PropertiesViewController: NSViewController
 {
     @objc private dynamic var item:       IODisplayItem
+    @objc private dynamic var properties: [ PropertyListNode ]
     @objc private dynamic var searchText: String?
     {
         didSet
         {
-            print( self.searchText ?? "<nil>" )
+            self.filter( text: self.searchText )
         }
     }
     
@@ -41,7 +42,8 @@ public class PropertiesViewController: NSViewController
     
     init( item: IODisplayItem )
     {
-        self.item = item
+        self.item       = item
+        self.properties = item.properties
         
         super.init( nibName: nil, bundle: nil )
     }
@@ -69,5 +71,48 @@ public class PropertiesViewController: NSViewController
     @objc public func performFindPanelAction( _ sender: Any? )
     {
         self.view.window?.makeFirstResponder( self.searchField )
+    }
+    
+    @objc private func expandAll()
+    {
+        self.outlineView.expandItem( nil, expandChildren: true )
+    }
+    
+    @objc private func collapseAll()
+    {
+        self.outlineView.collapseItem( nil, collapseChildren: true )
+    }
+    
+    private func filter( text: String? )
+    {
+        self.collapseAll()
+        
+        let predicate: NSPredicate? =
+        {
+            guard let text = text, text.count > 0 else
+            {
+                return nil
+            }
+            
+            return NSPredicate( format: "key contains[c] %@", text )
+        }()
+        
+        self.item.properties.forEach { $0.predicate = predicate }
+        
+        if let predicate = predicate
+        {
+            self.properties = self.item.properties.filter
+            {
+                $0.children.count > 0 || predicate.evaluate( with: $0 )
+            }
+            
+            self.expandAll()
+        }
+        else
+        {
+            self.properties = self.item.properties
+            
+            self.collapseAll()
+        }
     }
 }

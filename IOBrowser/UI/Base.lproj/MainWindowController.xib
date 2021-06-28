@@ -87,8 +87,7 @@
                             <constraint firstItem="Vry-EO-Ddb" firstAttribute="top" secondItem="vcV-DB-fpR" secondAttribute="bottom" constant="8" symbolic="YES" id="fyM-K7-PeO"/>
                         </constraints>
                         <connections>
-                            <binding destination="-2" name="hidden" keyPath="self.loading" id="Bgx-al-own"/>
-                            <binding destination="-2" name="hidden2" keyPath="self.objects" previousBinding="Bgx-al-own" id="pD1-HE-KPb">
+                            <binding destination="-2" name="hidden2" keyPath="self.items" previousBinding="Bgx-al-own" id="rAW-EJ-MCn">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
@@ -97,6 +96,7 @@
                                     <string key="NSValueTransformerName">ArrayIsNotEmpty</string>
                                 </dictionary>
                             </binding>
+                            <binding destination="-2" name="hidden" keyPath="self.loading" id="Bgx-al-own"/>
                         </connections>
                     </visualEffectView>
                     <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-QU-4iG">
@@ -290,8 +290,7 @@
                             <real value="250"/>
                         </holdingPriorities>
                         <connections>
-                            <binding destination="-2" name="hidden" keyPath="self.loading" id="HR4-NF-YwJ"/>
-                            <binding destination="-2" name="hidden2" keyPath="self.objects" previousBinding="HR4-NF-YwJ" id="HvC-xI-f9J">
+                            <binding destination="-2" name="hidden2" keyPath="self.items" previousBinding="HR4-NF-YwJ" id="PVR-6B-oUm">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
@@ -300,6 +299,7 @@
                                     <string key="NSValueTransformerName">ArrayIsEmpty</string>
                                 </dictionary>
                             </binding>
+                            <binding destination="-2" name="hidden" keyPath="self.loading" id="HR4-NF-YwJ"/>
                         </connections>
                     </splitView>
                 </subviews>
@@ -322,7 +322,7 @@
         </window>
         <treeController childrenKeyPath="children" avoidsEmptySelection="NO" selectsInsertedObjects="NO" id="uah-mw-q2d">
             <connections>
-                <binding destination="-2" name="contentArray" keyPath="self.objects" id="hzY-hR-nbB"/>
+                <binding destination="-2" name="contentArray" keyPath="self.items" id="GTz-yu-PTC"/>
             </connections>
         </treeController>
     </objects>

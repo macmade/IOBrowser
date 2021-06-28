@@ -30,6 +30,7 @@ public class PropertyListNode: NSObject
     @objc public private( set ) dynamic var value:        String
     @objc public private( set ) dynamic var type:         String
     @objc public private( set ) dynamic var propertyList: Any?
+    @objc public private( set ) dynamic var allChildren = [ PropertyListNode ]()
     @objc public private( set ) dynamic var children    = [ PropertyListNode ]()
     
     private static var dateFormatter: DateFormatter
@@ -209,18 +210,39 @@ public class PropertyListNode: NSObject
         }
     }
     
+    public var predicate: NSPredicate?
+    {
+        didSet
+        {
+            self.filter( predicate: self.predicate )
+        }
+    }
+    
+    private func filter( predicate: NSPredicate? )
+    {
+        self.allChildren.forEach { $0.predicate = predicate }
+        
+        guard let predicate = predicate else
+        {
+            self.children = self.allChildren
+            
+            return
+        }
+        
+        self.children = self.allChildren.compactMap
+        {
+            predicate.evaluate( with: $0 ) || $0.children.count > 0 ? $0 : nil
+        }
+    }
+    
     @discardableResult
     private func addChild( key: String, propertyList: Any? ) -> PropertyListNode
     {
         let child = PropertyListNode( key: key, propertyList: propertyList )
         
-        self.addChild( child )
+        self.allChildren.append( child )
+        self.children.append( child )
         
         return child
-    }
-    
-    public func addChild( _ child: PropertyListNode )
-    {
-        self.children.append( child )
     }
 }
