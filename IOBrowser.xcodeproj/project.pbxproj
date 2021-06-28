@@ -14,7 +14,6 @@
 		05646BF22685058700707676 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF02685058700707676 /* AboutWindowController.xib */; };
 		05646BF72685064C00707676 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BF62685064C00707676 /* MainWindowController.swift */; };
 		05646BFA2685072900707676 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF82685072900707676 /* MainWindowController.xib */; };
-		05646BFE268508D200707676 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BFD268508D200707676 /* Synchronizable.swift */; };
 		0566B96D2686B531006EE45A /* GitHubUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; };
 		0566B96E2686B531006EE45A /* GitHubUpdates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52688BE2E00E8A413 /* Preferences.swift */; };
@@ -115,7 +114,6 @@
 		05646BF12685058700707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutWindowController.xib; sourceTree = "<group>"; };
 		05646BF62685064C00707676 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		05646BF92685072900707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
-		05646BFD268508D200707676 /* Synchronizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
 		05646C03268527E400707676 /* IOBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IOBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GitHubUpdates.xcodeproj; path = Submodules/GitHubUpdates/GitHubUpdates.xcodeproj; sourceTree = "<group>"; };
 		05B886B52688BE2E00E8A413 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				05B886B52688BE2E00E8A413 /* Preferences.swift */,
 				05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */,
 				05B886BF2689C64F00E8A413 /* PropertyListNode.swift */,
-				05646BFD268508D200707676 /* Synchronizable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -482,7 +479,6 @@
 				05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */,
 				05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */,
 				05646BF72685064C00707676 /* MainWindowController.swift in Sources */,
-				05646BFE268508D200707676 /* Synchronizable.swift in Sources */,
 				05B88705268A388700E8A413 /* ArrayIsNotEmpty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
