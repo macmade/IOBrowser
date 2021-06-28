@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="outlineView" destination="XY4-0b-KB7" id="MnL-kv-JbB"/>
                 <outlet property="propertiesView" destination="Fob-Ee-LIc" id="jiw-mE-36m"/>
+                <outlet property="searchField" destination="dom-9K-Bkt" id="4fa-T4-Ewa"/>
                 <outlet property="treeController" destination="uah-mw-q2d" id="EDZ-qQ-gTb"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="3Jc-9C-AuF"/>
             </connections>
@@ -86,6 +87,7 @@
                             <constraint firstItem="Vry-EO-Ddb" firstAttribute="top" secondItem="vcV-DB-fpR" secondAttribute="bottom" constant="8" symbolic="YES" id="fyM-K7-PeO"/>
                         </constraints>
                         <connections>
+                            <binding destination="-2" name="hidden" keyPath="self.loading" id="Bgx-al-own"/>
                             <binding destination="-2" name="hidden2" keyPath="self.objects" previousBinding="Bgx-al-own" id="pD1-HE-KPb">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -95,7 +97,6 @@
                                     <string key="NSValueTransformerName">ArrayIsNotEmpty</string>
                                 </dictionary>
                             </binding>
-                            <binding destination="-2" name="hidden" keyPath="self.loading" id="Bgx-al-own"/>
                         </connections>
                     </visualEffectView>
                     <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-QU-4iG">
@@ -109,13 +110,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="515"/>
                                         <subviews>
                                             <scrollView autoresizesSubviews="NO" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvx-fn-J2i">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="515"/>
+                                                <rect key="frame" x="0.0" y="51" width="240" height="464"/>
                                                 <clipView key="contentView" autoresizesSubviews="NO" drawsBackground="NO" id="UA9-mM-OXc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="515"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="464"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="inset" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="13" outlineTableColumn="eBr-Pn-x6K" id="XY4-0b-KB7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="515"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="464"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -210,12 +211,36 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
+                                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="4oO-PV-hlQ">
+                                                <rect key="frame" x="0.0" y="40" width="240" height="5"/>
+                                            </box>
+                                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dom-9K-Bkt">
+                                                <rect key="frame" x="10" y="10" width="220" height="22"/>
+                                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="kNU-3V-wNm">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </searchFieldCell>
+                                                <connections>
+                                                    <binding destination="-2" name="value" keyPath="self.searchText" id="nPS-VI-MBO">
+                                                        <dictionary key="options">
+                                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
+                                            </searchField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Cvx-fn-J2i" firstAttribute="top" secondItem="iP6-Bl-wra" secondAttribute="top" id="1ZA-5Q-ie1"/>
                                             <constraint firstItem="Cvx-fn-J2i" firstAttribute="leading" secondItem="iP6-Bl-wra" secondAttribute="leading" id="EWD-PU-vy0"/>
+                                            <constraint firstItem="4oO-PV-hlQ" firstAttribute="leading" secondItem="iP6-Bl-wra" secondAttribute="leading" id="En0-20-0Rf"/>
+                                            <constraint firstAttribute="trailing" secondItem="4oO-PV-hlQ" secondAttribute="trailing" id="Hdo-CR-6yW"/>
                                             <constraint firstAttribute="trailing" secondItem="Cvx-fn-J2i" secondAttribute="trailing" id="MAZ-mP-sij"/>
-                                            <constraint firstAttribute="bottom" secondItem="Cvx-fn-J2i" secondAttribute="bottom" id="tPr-xe-fMN"/>
+                                            <constraint firstAttribute="bottom" secondItem="dom-9K-Bkt" secondAttribute="bottom" constant="10" id="VhH-PS-sy2"/>
+                                            <constraint firstItem="dom-9K-Bkt" firstAttribute="leading" secondItem="iP6-Bl-wra" secondAttribute="leading" constant="10" id="eT5-LR-lVP"/>
+                                            <constraint firstAttribute="trailing" secondItem="dom-9K-Bkt" secondAttribute="trailing" constant="10" id="iIC-BX-WV9"/>
+                                            <constraint firstItem="4oO-PV-hlQ" firstAttribute="top" secondItem="Cvx-fn-J2i" secondAttribute="bottom" constant="8" symbolic="YES" id="pVF-e5-Qbw"/>
+                                            <constraint firstItem="dom-9K-Bkt" firstAttribute="top" secondItem="4oO-PV-hlQ" secondAttribute="bottom" constant="10" id="zux-C4-nbI"/>
                                         </constraints>
                                     </visualEffectView>
                                 </subviews>
@@ -276,6 +301,7 @@
                             <real value="250"/>
                         </holdingPriorities>
                         <connections>
+                            <binding destination="-2" name="hidden" keyPath="self.loading" id="HR4-NF-YwJ"/>
                             <binding destination="-2" name="hidden2" keyPath="self.objects" previousBinding="HR4-NF-YwJ" id="HvC-xI-f9J">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -285,7 +311,6 @@
                                     <string key="NSValueTransformerName">ArrayIsEmpty</string>
                                 </dictionary>
                             </binding>
-                            <binding destination="-2" name="hidden" keyPath="self.loading" id="HR4-NF-YwJ"/>
                         </connections>
                     </splitView>
                 </subviews>
@@ -304,7 +329,7 @@
                     <constraint firstItem="Vqs-nQ-go1" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="zXB-8S-KWC"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-110" y="144"/>
+            <point key="canvasLocation" x="-110" y="143.5"/>
         </window>
         <treeController childrenKeyPath="children" avoidsEmptySelection="NO" selectsInsertedObjects="NO" id="uah-mw-q2d">
             <connections>

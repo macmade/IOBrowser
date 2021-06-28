@@ -29,10 +29,18 @@ public class MainWindowController: NSWindowController
     @objc private dynamic var loading       = true
     @objc private dynamic var objects       = [ IOObject ]()
     @objc private dynamic var selectedObject: IOObject?
+    @objc private dynamic var searchText:     String?
+    {
+        didSet
+        {
+            print( self.searchText ?? "<nil>" )
+        }
+    }
     
     @IBOutlet private var treeController: NSTreeController!
     @IBOutlet private var outlineView:    NSOutlineView!
     @IBOutlet private var propertiesView: NSView!
+    @IBOutlet private var searchField:    NSSearchField!
     
     private var selectionObserver:        NSKeyValueObservation?
     private var propertiesViewController: PropertiesViewController?
@@ -103,5 +111,10 @@ public class MainWindowController: NSWindowController
                 }
             }
         }
+    }
+    
+    @objc public func performFindPanelAction( _ sender: Any? )
+    {
+        self.window?.makeFirstResponder( self.searchField )
     }
 }
