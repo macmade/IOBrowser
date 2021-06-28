@@ -110,8 +110,6 @@ public class MainWindowController: NSWindowController
             
             self.searchField.nextKeyView       = controller.searchField
             controller.searchField.nextKeyView = self.searchField
-            
-            self.window?.makeFirstResponder( controller.view )
         }
         else
         {
