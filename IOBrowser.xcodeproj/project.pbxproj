@@ -21,6 +21,8 @@
 		05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */; };
 		05B886BE2688F4AA00E8A413 /* PropertiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B886BC2688F4AA00E8A413 /* PropertiesViewController.xib */; };
 		05B886C02689C64F00E8A413 /* PropertyListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BF2689C64F00E8A413 /* PropertyListNode.swift */; };
+		05B88701268A382D00E8A413 /* ArrayIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88700268A382D00E8A413 /* ArrayIsEmpty.swift */; };
+		05B88705268A388700E8A413 /* ArrayIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88704268A388700E8A413 /* ArrayIsNotEmpty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesViewController.swift; path = IOBrowser/Classes/PropertiesViewController.swift; sourceTree = SOURCE_ROOT; };
 		05B886BD2688F4AA00E8A413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PropertiesViewController.xib; sourceTree = "<group>"; };
 		05B886BF2689C64F00E8A413 /* PropertyListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListNode.swift; sourceTree = "<group>"; };
+		05B88700268A382D00E8A413 /* ArrayIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIsEmpty.swift; sourceTree = "<group>"; };
+		05B88704268A388700E8A413 /* ArrayIsNotEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIsNotEmpty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 			children = (
 				05646BEE2685055F00707676 /* AboutWindowController.swift */,
 				05646BAF2685020A00707676 /* ApplicationDelegate.swift */,
+				05B88700268A382D00E8A413 /* ArrayIsEmpty.swift */,
+				05B88704268A388700E8A413 /* ArrayIsNotEmpty.swift */,
 				05B886B82688CB1200E8A413 /* IOObject.swift */,
 				05646BF62685064C00707676 /* MainWindowController.swift */,
 				05B886B52688BE2E00E8A413 /* Preferences.swift */,
@@ -444,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B88701268A382D00E8A413 /* ArrayIsEmpty.swift in Sources */,
 				05B886C02689C64F00E8A413 /* PropertyListNode.swift in Sources */,
 				05B886B92688CB1200E8A413 /* IOObject.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
@@ -452,6 +459,7 @@
 				05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */,
 				05646BF72685064C00707676 /* MainWindowController.swift in Sources */,
 				05646BFE268508D200707676 /* Synchronizable.swift in Sources */,
+				05B88705268A388700E8A413 /* ArrayIsNotEmpty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

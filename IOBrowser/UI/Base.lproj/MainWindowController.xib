@@ -86,13 +86,13 @@
                             <constraint firstItem="Vry-EO-Ddb" firstAttribute="top" secondItem="vcV-DB-fpR" secondAttribute="bottom" constant="8" symbolic="YES" id="fyM-K7-PeO"/>
                         </constraints>
                         <connections>
-                            <binding destination="-2" name="hidden2" keyPath="self.root" previousBinding="Bgx-al-own" id="Tws-98-2bD">
+                            <binding destination="-2" name="hidden2" keyPath="self.objects" previousBinding="Bgx-al-own" id="pD1-HE-KPb">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                     <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                     <integer key="NSNullPlaceholder" value="-1"/>
-                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                    <string key="NSValueTransformerName">ArrayIsNotEmpty</string>
                                 </dictionary>
                             </binding>
                             <binding destination="-2" name="hidden" keyPath="self.loading" id="Bgx-al-own"/>
@@ -246,13 +246,13 @@
                             <real value="250"/>
                         </holdingPriorities>
                         <connections>
-                            <binding destination="-2" name="hidden2" keyPath="self.root" previousBinding="HR4-NF-YwJ" id="sqp-zn-6c0">
+                            <binding destination="-2" name="hidden2" keyPath="self.objects" previousBinding="HR4-NF-YwJ" id="HvC-xI-f9J">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                     <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                     <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                     <integer key="NSNullPlaceholder" value="-1"/>
-                                    <string key="NSValueTransformerName">NSIsNil</string>
+                                    <string key="NSValueTransformerName">ArrayIsEmpty</string>
                                 </dictionary>
                             </binding>
                             <binding destination="-2" name="hidden" keyPath="self.loading" id="HR4-NF-YwJ"/>
@@ -278,7 +278,7 @@
         </window>
         <treeController childrenKeyPath="children" avoidsEmptySelection="NO" selectsInsertedObjects="NO" id="uah-mw-q2d">
             <connections>
-                <binding destination="-2" name="contentObject" keyPath="self.root" id="GMs-wa-v3I"/>
+                <binding destination="-2" name="contentArray" keyPath="self.objects" id="hzY-hR-nbB"/>
             </connections>
         </treeController>
     </objects>

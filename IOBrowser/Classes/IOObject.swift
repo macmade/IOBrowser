@@ -28,7 +28,7 @@ import IOKit
 
 @objc public class IOObject: NSObject
 {
-    public static func root( completion: @escaping ( IOObject? ) -> Void )
+    public static func all( completion: @escaping ( [ IOObject ] ) -> Void )
     {
         DispatchQueue.global( qos: .userInitiated ).async
         {
@@ -36,7 +36,7 @@ import IOKit
             
             if IOMasterPort( UInt32( MACH_PORT_NULL ), &port ) != KERN_SUCCESS
             {
-                completion( nil )
+                completion( [] )
                 
                 return
             }
@@ -45,21 +45,36 @@ import IOKit
             
             if service == MACH_PORT_NULL
             {
-                completion( nil )
+                completion( [] )
                 
                 return
             }
             
-            let object = IOObject( entry: service, plane: kIOServicePlane )
+            let objects =
+            [
+                IOObject( name: "Service",     entry: service, plane: kIOServicePlane ),
+                IOObject( name: "Power",       entry: service, plane: kIOPowerPlane ),
+                IOObject( name: "Device Tree", entry: service, plane: kIODeviceTreePlane ),
+                IOObject( name: "Audio",       entry: service, plane: kIOAudioPlane ),
+                IOObject( name: "FireWire",    entry: service, plane: kIOFireWirePlane ),
+                IOObject( name: "USB",         entry: service, plane: kIOUSBPlane )
+            ]
             
             IOObjectRelease( service )
-            completion( object )
+            completion( objects.compactMap { $0 } )
         }
     }
     
     @objc public private( set ) dynamic var name:       String
     @objc public private( set ) dynamic var children:   [ IOObject ]     = []
     @objc public private( set ) dynamic var properties: [ String : Any ] = [:]
+    
+    private convenience init?( name: String, entry: io_registry_entry_t, plane: String )
+    {
+        self.init( entry: entry, plane: plane )
+        
+        self.name = name
+    }
     
     private init?( entry: io_registry_entry_t, plane: String )
     {

@@ -28,7 +28,6 @@ public class MainWindowController: NSWindowController
 {
     @objc private dynamic var loading       = true
     @objc private dynamic var objects       = [ IOObject ]()
-    @objc private dynamic var root:           IOObject?
     @objc private dynamic var selectedObject: IOObject?
     
     @IBOutlet private var treeController: NSTreeController!
@@ -79,25 +78,28 @@ public class MainWindowController: NSWindowController
             }
         }
         
-        IOObject.root
+        IOObject.all
         {
-            object in DispatchQueue.main.asyncAfter( deadline: .now() + .seconds( 1 ) )
+            objects in DispatchQueue.main.asyncAfter( deadline: .now() + .seconds( 1 ) )
             {
                 self.loading = false
-                self.root    = object
+                self.objects = objects
                 
                 DispatchQueue.main.async
                 {
-                    guard let item = self.outlineView.item( atRow: 0 ) as? NSTreeNode else
+                    self.outlineView.collapseItem( nil, collapseChildren: true )
+                    
+                    var items = [ Any ]()
+                    
+                    for i in 0 ..< objects.count
                     {
-                        return
+                        if let item = self.outlineView.item( atRow: i )
+                        {
+                            items.append( item )
+                        }
                     }
                     
-                    self.outlineView.expandItem( item )
-                    item.children?.forEach
-                    {
-                        self.outlineView.expandItem( $0 )
-                    }
+                    items.forEach { self.outlineView.expandItem( $0 ) }
                 }
             }
         }
