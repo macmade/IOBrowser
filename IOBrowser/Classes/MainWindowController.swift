@@ -129,7 +129,7 @@ public class MainWindowController: NSWindowController
                 return nil
             }
             
-            return NSPredicate( format: "name contains[c] %@", text )
+            return NSPredicate( format: "name contains[c] %@ OR index contains[c] %@", text, text )
         }()
         
         self.items.forEach { $0.predicate = predicate }

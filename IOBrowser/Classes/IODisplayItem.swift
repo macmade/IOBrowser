@@ -28,10 +28,17 @@ public class IODisplayItem: NSObject
 {
     @objc public private( set ) dynamic var object:      IOObject
     @objc public private( set ) dynamic var name:        String
+    @objc public private( set ) dynamic var index:       String
     @objc public private( set ) dynamic var icon:        NSImage?
     @objc public private( set ) dynamic var allChildren: [ IODisplayItem ]
     @objc public private( set ) dynamic var children:    [ IODisplayItem ]
     @objc public private( set ) dynamic var properties:  [ PropertyListNode ]
+    {
+        didSet
+        {
+            self.index = IODisplayItem.index( for: self.properties )
+        }
+    }
     
     public static var all: [ IODisplayItem ]
     {
@@ -68,7 +75,9 @@ public class IODisplayItem: NSObject
         self.icon        = icon
         self.allChildren = object.children.compactMap { IODisplayItem( object: $0 ) }
         self.children    = self.allChildren
-        self.properties  = object.properties.map { PropertyListNode( key: $0.key, propertyList: $0.value ) }
+        let properties   = object.properties.map { PropertyListNode( key: $0.key, propertyList: $0.value ) }
+        self.properties  = properties
+        self.index       = IODisplayItem.index( for: properties )
     }
     
     public var predicate: NSPredicate?
@@ -94,5 +103,14 @@ public class IODisplayItem: NSObject
         {
             predicate.evaluate( with: $0 ) || $0.children.count > 0 ? $0 : nil
         }
+    }
+
+    private class func index( for properties: [ PropertyListNode ] ) -> String
+    {
+        properties.reduce( into: [ String ]() )
+        {
+            $0.append( $1.index )
+        }
+        .joined( separator: " " )
     }
 }

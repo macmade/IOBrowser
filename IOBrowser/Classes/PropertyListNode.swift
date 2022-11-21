@@ -29,10 +29,17 @@ public class PropertyListNode: NSObject
     @objc public private( set ) dynamic var key:          String
     @objc public private( set ) dynamic var value:        String
     @objc public private( set ) dynamic var type:         String
-    @objc public private( set ) dynamic var propertyList: Any?
+    @objc public private( set ) dynamic var index:        String
     @objc public private( set ) dynamic var textColor:    NSColor
     @objc public private( set ) dynamic var allChildren = [ PropertyListNode ]()
     @objc public private( set ) dynamic var children    = [ PropertyListNode ]()
+    @objc public private( set ) dynamic var propertyList: Any?
+    {
+        didSet
+        {
+            self.index = "\( self.key ) \( PropertyListNode.index( for: self.propertyList ) )"
+        }
+    }
     
     private static var dateFormatter: DateFormatter
     {
@@ -53,6 +60,7 @@ public class PropertyListNode: NSObject
         self.value        = info.value
         self.propertyList = propertyList
         self.textColor    = NSColor.controlTextColor
+        self.index        = "\( key ) \( PropertyListNode.index( for: propertyList ) )"
         
         super.init()
         
@@ -258,5 +266,83 @@ public class PropertyListNode: NSObject
         self.children.append( child )
         
         return child
+    }
+
+    private class func index( for plist: Any? ) -> String
+    {
+        if let value = plist as? String
+        {
+            return value
+        }
+        else if let value = plist as? Bool
+        {
+            return value ? "true" : "false"
+        }
+        else if let value = plist as? NSNumber
+        {
+            return value.stringValue
+        }
+        else if let value = plist as? URL
+        {
+            return value.absoluteString
+        }
+        else if let value = plist as? UUID
+        {
+            return value.uuidString
+        }
+        else if let value = plist as? NSArray
+        {
+            return self.index( for: value )
+        }
+        else if let value = plist as? NSOrderedSet
+        {
+            return self.index( for: value )
+        }
+        else if let value = plist as? NSSet
+        {
+            return self.index( for: value )
+        }
+        else if let value = plist as? NSDictionary
+        {
+            return self.index( for: value )
+        }
+
+        return ""
+    }
+
+    private class func index( for value: NSArray ) -> String
+    {
+        value.map
+        {
+            self.index( for: $0 )
+        }
+        .joined( separator: " " )
+    }
+
+    private class func index( for value: NSOrderedSet ) -> String
+    {
+        value.map
+        {
+            self.index( for: $0 )
+        }
+        .joined( separator: " " )
+    }
+
+    private class func index( for value: NSSet ) -> String
+    {
+        value.map
+        {
+            self.index( for: $0 )
+        }
+        .joined( separator: " " )
+    }
+
+    private class func index( for value: NSDictionary ) -> String
+    {
+        value.map
+        {
+            "\( self.index( for: $0 ) ) \( self.index( for: $1 ) )"
+        }
+        .joined( separator: " " )
     }
 }
