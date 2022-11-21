@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -10,6 +11,7 @@
                 <outlet property="outlineView" destination="XY4-0b-KB7" id="MnL-kv-JbB"/>
                 <outlet property="propertiesView" destination="Fob-Ee-LIc" id="jiw-mE-36m"/>
                 <outlet property="searchField" destination="dom-9K-Bkt" id="4fa-T4-Ewa"/>
+                <outlet property="searchOptions" destination="Zle-8c-cqa" id="iXp-zO-7tL"/>
                 <outlet property="treeController" destination="uah-mw-q2d" id="EDZ-qQ-gTb"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="3Jc-9C-AuF"/>
             </connections>
@@ -20,7 +22,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="800" height="515"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1069"/>
             <value key="minSize" type="size" width="800" height="515"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="800" height="515"/>
@@ -204,7 +206,7 @@
                                                 <rect key="frame" x="0.0" y="40" width="240" height="5"/>
                                             </box>
                                             <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dom-9K-Bkt">
-                                                <rect key="frame" x="10" y="10" width="220" height="22"/>
+                                                <rect key="frame" x="10" y="10" width="196" height="22"/>
                                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="kNU-3V-wNm">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -218,17 +220,33 @@
                                                     </binding>
                                                 </connections>
                                             </searchField>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="dq5-tP-wOf">
+                                                <rect key="frame" x="214" y="10" width="16" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="16" id="Shf-dz-5uZ"/>
+                                                    <constraint firstAttribute="height" constant="16" id="Vhf-kM-yd3"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSActionTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NX9-cy-Q2S">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="showSearchOptions:" target="-2" id="tw2-rH-iTh"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Cvx-fn-J2i" firstAttribute="top" secondItem="iP6-Bl-wra" secondAttribute="top" id="1ZA-5Q-ie1"/>
+                                            <constraint firstAttribute="trailing" secondItem="dq5-tP-wOf" secondAttribute="trailing" constant="10" id="Bhd-u4-5Nn"/>
                                             <constraint firstItem="Cvx-fn-J2i" firstAttribute="leading" secondItem="iP6-Bl-wra" secondAttribute="leading" id="EWD-PU-vy0"/>
                                             <constraint firstItem="4oO-PV-hlQ" firstAttribute="leading" secondItem="iP6-Bl-wra" secondAttribute="leading" id="En0-20-0Rf"/>
                                             <constraint firstAttribute="trailing" secondItem="4oO-PV-hlQ" secondAttribute="trailing" id="Hdo-CR-6yW"/>
                                             <constraint firstAttribute="trailing" secondItem="Cvx-fn-J2i" secondAttribute="trailing" id="MAZ-mP-sij"/>
+                                            <constraint firstItem="dq5-tP-wOf" firstAttribute="leading" secondItem="dom-9K-Bkt" secondAttribute="trailing" constant="8" symbolic="YES" id="S6e-k2-SOx"/>
                                             <constraint firstAttribute="bottom" secondItem="dom-9K-Bkt" secondAttribute="bottom" constant="10" id="VhH-PS-sy2"/>
                                             <constraint firstItem="dom-9K-Bkt" firstAttribute="leading" secondItem="iP6-Bl-wra" secondAttribute="leading" constant="10" id="eT5-LR-lVP"/>
-                                            <constraint firstAttribute="trailing" secondItem="dom-9K-Bkt" secondAttribute="trailing" constant="10" id="iIC-BX-WV9"/>
                                             <constraint firstItem="4oO-PV-hlQ" firstAttribute="top" secondItem="Cvx-fn-J2i" secondAttribute="bottom" constant="8" symbolic="YES" id="pVF-e5-Qbw"/>
+                                            <constraint firstItem="dq5-tP-wOf" firstAttribute="centerY" secondItem="dom-9K-Bkt" secondAttribute="centerY" id="qys-yz-0q2"/>
                                             <constraint firstItem="dom-9K-Bkt" firstAttribute="top" secondItem="4oO-PV-hlQ" secondAttribute="bottom" constant="10" id="zux-C4-nbI"/>
                                         </constraints>
                                     </visualEffectView>
@@ -353,8 +371,35 @@
                 <binding destination="-2" name="contentArray" keyPath="self.items" id="GTz-yu-PTC"/>
             </connections>
         </treeController>
+        <menu autoenablesItems="NO" id="Zle-8c-cqa">
+            <items>
+                <menuItem title="Search in Properties" id="hSU-xF-TRO">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleSearchInProperties:" target="-2" id="p5C-el-Fd1"/>
+                        <binding destination="-2" name="hidden" keyPath="self.searchInProperties" id="RFI-rb-ICO"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Search in Properties" state="on" id="fdk-No-4mX">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleSearchInProperties:" target="-2" id="ti6-YT-dLZ"/>
+                        <binding destination="-2" name="hidden" keyPath="self.searchInProperties" id="ZQZ-B8-cxf">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="-2" id="5cf-gs-SCm"/>
+            </connections>
+            <point key="canvasLocation" x="-342" y="519"/>
+        </menu>
     </objects>
     <resources>
+        <image name="NSActionTemplate" width="20" height="20"/>
         <image name="NSApplicationIcon" width="32" height="32"/>
         <image name="StackTemplate" width="150" height="150"/>
     </resources>

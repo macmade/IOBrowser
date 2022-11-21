@@ -26,10 +26,19 @@ import Cocoa
 
 public class MainWindowController: NSWindowController
 {
-    @objc private dynamic var loading       = true
-    @objc private dynamic var items         = [ IODisplayItem ]()
-    @objc private dynamic var selectedObject: IODisplayItem?
-    @objc private dynamic var searchText:     String?
+    @objc private dynamic var loading        = true
+    @objc private dynamic var items          = [ IODisplayItem ]()
+    @objc private dynamic var selectedObject:  IODisplayItem?
+
+    @objc private dynamic var searchText: String?
+    {
+        didSet
+        {
+            self.filter( text: self.searchText )
+        }
+    }
+
+    @objc private dynamic var searchInProperties = true
     {
         didSet
         {
@@ -41,6 +50,7 @@ public class MainWindowController: NSWindowController
     @IBOutlet private var outlineView:    NSOutlineView!
     @IBOutlet private var propertiesView: NSView!
     @IBOutlet private var searchField:    NSSearchField!
+    @IBOutlet private var searchOptions:  NSMenu!
     
     private var selectionObserver:        NSKeyValueObservation?
     private var propertiesViewController: PropertiesViewController?
@@ -128,8 +138,13 @@ public class MainWindowController: NSWindowController
             {
                 return nil
             }
-            
-            return NSPredicate( format: "name contains[c] %@ OR index contains[c] %@", text, text )
+
+            if self.searchInProperties
+            {
+                return NSPredicate( format: "name contains[c] %@ OR index contains[c] %@", text, text )
+            }
+
+            return NSPredicate( format: "name contains[c] %@", text )
         }()
         
         self.items.forEach { $0.predicate = predicate }
@@ -174,5 +189,23 @@ public class MainWindowController: NSWindowController
     @objc public func performFindPanelAction( _ sender: Any? )
     {
         self.window?.makeFirstResponder( self.searchField )
+    }
+
+    @IBAction private func toggleSearchInProperties( _ sender: Any? )
+    {
+        self.searchInProperties = self.searchInProperties == false
+    }
+
+    @IBAction private func showSearchOptions( _ sender: Any? )
+    {
+        guard let view = sender as? NSView, let event = NSApp.currentEvent
+        else
+        {
+            NSSound.beep()
+
+            return
+        }
+
+        NSMenu.popUpContextMenu( self.searchOptions, with: event, for: view )
     }
 }
