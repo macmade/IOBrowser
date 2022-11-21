@@ -23,25 +23,45 @@
  ******************************************************************************/
 
 import Cocoa
+
+#if !APPSTORE
 import GitHubUpdates
+#endif
 
 @main public class ApplicationDelegate: NSObject, NSApplicationDelegate
 {
     @objc private dynamic var aboutWindowController = AboutWindowController()
     @objc private dynamic var mainWindowController  = MainWindowController()
-    
-    @IBOutlet private var updater: GitHubUpdater!
+
+    #if !APPSTORE
+    private lazy var updater: GitHubUpdater =
+    {
+        let updater        = GitHubUpdater()
+        updater.user       = "macmade"
+        updater.repository = "IOBrowser"
+
+        return updater
+    }()
+    #endif
+
+    #if APPSTORE
+    @objc private dynamic var appStore = true
+    #else
+    @objc private dynamic var appStore = false
+    #endif
     
     public func applicationDidFinishLaunching( _ notification: Notification )
     {
         self.showMainWindow( nil )
         
         Preferences.shared.lastStart = Date()
-        
+
+        #if !APPSTORE
         DispatchQueue.main.asyncAfter( deadline: .now() + .seconds( 5 ) )
         {
             self.updater.checkForUpdatesInBackground()
         }
+        #endif
     }
     
     public func applicationWillTerminate( _ notification: Notification )
@@ -90,9 +110,14 @@ import GitHubUpdates
             default: NSSound.beep()
         }
     }
-    
+
+    #if APPSTORE
+    @IBAction public func checkForUpdates( _ sender: Any? )
+    {}
+    #else
     @IBAction public func checkForUpdates( _ sender: Any? )
     {
         self.updater.checkForUpdates( sender )
     }
+    #endif
 }

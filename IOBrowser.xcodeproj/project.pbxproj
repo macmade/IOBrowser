@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,26 @@
 		05646BFA2685072900707676 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF82685072900707676 /* MainWindowController.xib */; };
 		0566B96D2686B531006EE45A /* GitHubUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; };
 		0566B96E2686B531006EE45A /* GitHubUpdates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0566B9692686B526006EE45A /* GitHubUpdates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		059861CB292B9B7000B20BBD /* ArrayIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88700268A382D00E8A413 /* ArrayIsEmpty.swift */; };
+		059861CC292B9B7000B20BBD /* PropertyListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BF2689C64F00E8A413 /* PropertyListNode.swift */; };
+		059861CD292B9B7000B20BBD /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82688CB1200E8A413 /* IOObject.swift */; };
+		059861CE292B9B7000B20BBD /* IODisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776E3268A5C87005864F8 /* IODisplayItem.swift */; };
+		059861CF292B9B7000B20BBD /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BAF2685020A00707676 /* ApplicationDelegate.swift */; };
+		059861D0292B9B7000B20BBD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
+		059861D1292B9B7000B20BBD /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */; };
+		059861D2292B9B7000B20BBD /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52688BE2E00E8A413 /* Preferences.swift */; };
+		059861D3292B9B7000B20BBD /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BF62685064C00707676 /* MainWindowController.swift */; };
+		059861D4292B9B7000B20BBD /* PropertyListFormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */; };
+		059861D5292B9B7000B20BBD /* ArrayIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B88704268A388700E8A413 /* ArrayIsNotEmpty.swift */; };
+		059861DA292B9B7000B20BBD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
+		059861DB292B9B7000B20BBD /* PropertiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B886BC2688F4AA00E8A413 /* PropertiesViewController.xib */; };
+		059861DC292B9B7000B20BBD /* FolderTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 05B88715268A463800E8A413 /* FolderTemplate.pdf */; };
+		059861DD292B9B7000B20BBD /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF82685072900707676 /* MainWindowController.xib */; };
+		059861DE292B9B7000B20BBD /* DocumentTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 05B88716268A463800E8A413 /* DocumentTemplate.pdf */; };
+		059861DF292B9B7000B20BBD /* StackTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 05B88713268A40E300E8A413 /* StackTemplate.pdf */; };
+		059861E0292B9B7000B20BBD /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 054776F5268A85B6005864F8 /* Icon.icns */; };
+		059861E1292B9B7000B20BBD /* PropertyListFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054776F2268A7BFA005864F8 /* PropertyListFormatViewController.xib */; };
+		059861E2292B9B7000B20BBD /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF02685058700707676 /* AboutWindowController.xib */; };
 		05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B52688BE2E00E8A413 /* Preferences.swift */; };
 		05B886B92688CB1200E8A413 /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886B82688CB1200E8A413 /* IOObject.swift */; };
 		05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */; };
@@ -122,6 +142,8 @@
 		05646BF92685072900707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
 		05646C03268527E400707676 /* IOBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IOBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		0566B9632686B526006EE45A /* GitHubUpdates.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GitHubUpdates.xcodeproj; path = Submodules/GitHubUpdates/GitHubUpdates.xcodeproj; sourceTree = "<group>"; };
+		059861E8292B9B7000B20BBD /* IOBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		059861EC292B9BA500B20BBD /* IOBrowser-AppStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IOBrowser-AppStore.entitlements"; sourceTree = "<group>"; };
 		05B886B52688BE2E00E8A413 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		05B886B82688CB1200E8A413 /* IOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOObject.swift; sourceTree = "<group>"; };
 		05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesViewController.swift; path = IOBrowser/Classes/PropertiesViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -143,6 +165,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		059861D6292B9B7000B20BBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -161,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				05646B9A268501B300707676 /* IOBrowser.app */,
+				059861E8292B9B7000B20BBD /* IOBrowser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +242,7 @@
 				05646BA4268501B400707676 /* Info.plist */,
 				05646C03268527E400707676 /* IOBrowser-Bridging-Header.h */,
 				05646BA5268501B400707676 /* IOBrowser.entitlements */,
+				059861EC292B9BA500B20BBD /* IOBrowser-AppStore.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -381,6 +412,24 @@
 			productReference = 05646B9A268501B300707676 /* IOBrowser.app */;
 			productType = "com.apple.product-type.application";
 		};
+		059861C9292B9B7000B20BBD /* IOBrowser AppStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 059861E5292B9B7000B20BBD /* Build configuration list for PBXNativeTarget "IOBrowser AppStore" */;
+			buildPhases = (
+				059861CA292B9B7000B20BBD /* Sources */,
+				059861D6292B9B7000B20BBD /* Frameworks */,
+				059861D8292B9B7000B20BBD /* ShellScript */,
+				059861D9292B9B7000B20BBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IOBrowser AppStore";
+			productName = Sensors;
+			productReference = 059861E8292B9B7000B20BBD /* IOBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -416,6 +465,7 @@
 			projectRoot = "";
 			targets = (
 				05646B99268501B300707676 /* IOBrowser */,
+				059861C9292B9B7000B20BBD /* IOBrowser AppStore */,
 			);
 		};
 /* End PBXProject section */
@@ -454,11 +504,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		059861D9292B9B7000B20BBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059861DA292B9B7000B20BBD /* MainMenu.xib in Resources */,
+				059861DB292B9B7000B20BBD /* PropertiesViewController.xib in Resources */,
+				059861DC292B9B7000B20BBD /* FolderTemplate.pdf in Resources */,
+				059861DD292B9B7000B20BBD /* MainWindowController.xib in Resources */,
+				059861DE292B9B7000B20BBD /* DocumentTemplate.pdf in Resources */,
+				059861DF292B9B7000B20BBD /* StackTemplate.pdf in Resources */,
+				059861E0292B9B7000B20BBD /* Icon.icns in Resources */,
+				059861E1292B9B7000B20BBD /* PropertyListFormatViewController.xib in Resources */,
+				059861E2292B9B7000B20BBD /* AboutWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		05646BED268503FE00707676 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    plist=\"IOBrowser/Info.plist\"\n    rev=$(git rev-list `git branch | grep -e \"^*\" | cut -d' ' -f 2` | wc -l)\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $rev\" \"$plist\"\nfi\n";
+		};
+		059861D8292B9B7000B20BBD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -492,6 +577,24 @@
 				05646BF72685064C00707676 /* MainWindowController.swift in Sources */,
 				054776F1268A7BED005864F8 /* PropertyListFormatViewController.swift in Sources */,
 				05B88705268A388700E8A413 /* ArrayIsNotEmpty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		059861CA292B9B7000B20BBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059861CB292B9B7000B20BBD /* ArrayIsEmpty.swift in Sources */,
+				059861CC292B9B7000B20BBD /* PropertyListNode.swift in Sources */,
+				059861CD292B9B7000B20BBD /* IOObject.swift in Sources */,
+				059861CE292B9B7000B20BBD /* IODisplayItem.swift in Sources */,
+				059861CF292B9B7000B20BBD /* ApplicationDelegate.swift in Sources */,
+				059861D0292B9B7000B20BBD /* AboutWindowController.swift in Sources */,
+				059861D1292B9B7000B20BBD /* PropertiesViewController.swift in Sources */,
+				059861D2292B9B7000B20BBD /* Preferences.swift in Sources */,
+				059861D3292B9B7000B20BBD /* MainWindowController.swift in Sources */,
+				059861D4292B9B7000B20BBD /* PropertyListFormatViewController.swift in Sources */,
+				059861D5292B9B7000B20BBD /* ArrayIsNotEmpty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +674,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.IOBrowser";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IOBrowser;
 				SWIFT_OBJC_BRIDGING_HEADER = "IOBrowser/IOBrowser-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -592,7 +695,58 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.IOBrowser";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IOBrowser;
+				SWIFT_OBJC_BRIDGING_HEADER = "IOBrowser/IOBrowser-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		059861E6292B9B7000B20BBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "IOBrowser/IOBrowser-AppStore.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"APPSTORE=1",
+				);
+				INFOPLIST_FILE = IOBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.IOBrowser";
+				PRODUCT_NAME = IOBrowser;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) APPSTORE";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOBrowser/IOBrowser-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		059861E7292B9B7000B20BBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "IOBrowser/IOBrowser-AppStore.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 326Y53CJMD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"APPSTORE=1",
+				);
+				INFOPLIST_FILE = IOBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.IOBrowser";
+				PRODUCT_NAME = IOBrowser;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) APPSTORE";
 				SWIFT_OBJC_BRIDGING_HEADER = "IOBrowser/IOBrowser-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -615,6 +769,15 @@
 			buildConfigurations = (
 				05646BA9268501B400707676 /* Debug */,
 				05646BAA268501B400707676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		059861E5292B9B7000B20BBD /* Build configuration list for PBXNativeTarget "IOBrowser AppStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059861E6292B9B7000B20BBD /* Debug */,
+				059861E7292B9B7000B20BBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
