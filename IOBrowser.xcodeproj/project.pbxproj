@@ -11,6 +11,10 @@
 		054776F1268A7BED005864F8 /* PropertyListFormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */; };
 		054776F4268A7BFA005864F8 /* PropertyListFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054776F2268A7BFA005864F8 /* PropertyListFormatViewController.xib */; };
 		054776F6268A85B6005864F8 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 054776F5268A85B6005864F8 /* Icon.icns */; };
+		0552FE472948FC7300DAA87A /* PropertyValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552FE462948FC7300DAA87A /* PropertyValueTransformer.swift */; };
+		0552FE482948FC7300DAA87A /* PropertyValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552FE462948FC7300DAA87A /* PropertyValueTransformer.swift */; };
+		0552FE4A294907FE00DAA87A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552FE49294907FE00DAA87A /* Data.swift */; };
+		0552FE4B294907FE00DAA87A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552FE49294907FE00DAA87A /* Data.swift */; };
 		05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BAF2685020A00707676 /* ApplicationDelegate.swift */; };
 		05646BB52685020A00707676 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
 		05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
@@ -87,6 +91,8 @@
 		054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListFormatViewController.swift; sourceTree = "<group>"; };
 		054776F3268A7BFA005864F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PropertyListFormatViewController.xib; sourceTree = "<group>"; };
 		054776F5268A85B6005864F8 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		0552FE462948FC7300DAA87A /* PropertyValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyValueTransformer.swift; sourceTree = "<group>"; };
+		0552FE49294907FE00DAA87A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		05646B9A268501B300707676 /* IOBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05646BA4268501B400707676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05646BA5268501B400707676 /* IOBrowser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOBrowser.entitlements; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 				05B886BA2688F44E00E8A413 /* PropertiesViewController.swift */,
 				05B886BF2689C64F00E8A413 /* PropertyListNode.swift */,
 				054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */,
+				0552FE462948FC7300DAA87A /* PropertyValueTransformer.swift */,
+				0552FE49294907FE00DAA87A /* Data.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -572,7 +580,9 @@
 				054776E4268A5C87005864F8 /* IODisplayItem.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
 				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,
+				0552FE472948FC7300DAA87A /* PropertyValueTransformer.swift in Sources */,
 				05B886BB2688F44E00E8A413 /* PropertiesViewController.swift in Sources */,
+				0552FE4A294907FE00DAA87A /* Data.swift in Sources */,
 				05B886B62688BE2E00E8A413 /* Preferences.swift in Sources */,
 				05646BF72685064C00707676 /* MainWindowController.swift in Sources */,
 				054776F1268A7BED005864F8 /* PropertyListFormatViewController.swift in Sources */,
@@ -590,7 +600,9 @@
 				059861CE292B9B7000B20BBD /* IODisplayItem.swift in Sources */,
 				059861CF292B9B7000B20BBD /* ApplicationDelegate.swift in Sources */,
 				059861D0292B9B7000B20BBD /* AboutWindowController.swift in Sources */,
+				0552FE482948FC7300DAA87A /* PropertyValueTransformer.swift in Sources */,
 				059861D1292B9B7000B20BBD /* PropertiesViewController.swift in Sources */,
+				0552FE4B294907FE00DAA87A /* Data.swift in Sources */,
 				059861D2292B9B7000B20BBD /* Preferences.swift in Sources */,
 				059861D3292B9B7000B20BBD /* MainWindowController.swift in Sources */,
 				059861D4292B9B7000B20BBD /* PropertyListFormatViewController.swift in Sources */,

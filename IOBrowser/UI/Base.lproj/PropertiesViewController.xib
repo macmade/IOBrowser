@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,17 +17,17 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+            <rect key="frame" x="0.0" y="0.0" width="689" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autoresizesSubviews="NO" borderType="none" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGN-Wg-aRY">
-                    <rect key="frame" x="0.0" y="43" width="600" height="357"/>
+                    <rect key="frame" x="0.0" y="69" width="689" height="331"/>
                     <clipView key="contentView" autoresizesSubviews="NO" id="PKt-ec-77m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="357"/>
+                        <rect key="frame" x="0.0" y="0.0" width="689" height="331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" headerView="orK-kR-OYs" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="S3g-Eq-j07" id="IWY-E5-zC4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="329"/>
+                                <rect key="frame" x="0.0" y="0.0" width="689" height="303"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="17" height="0.0"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -139,9 +140,13 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="edm-bd-opd" name="value" keyPath="objectValue.value" id="mW9-aD-ZY6"/>
-                                                            <binding destination="edm-bd-opd" name="toolTip" keyPath="objectValue.value" id="xOP-EZ-qD2"/>
                                                             <binding destination="edm-bd-opd" name="textColor" keyPath="objectValue.textColor" id="aHA-Oo-CPZ"/>
+                                                            <binding destination="edm-bd-opd" name="toolTip" keyPath="objectValue.value" id="xOP-EZ-qD2"/>
+                                                            <binding destination="edm-bd-opd" name="value" keyPath="objectValue" id="7w2-AL-wta">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">PropertyValueTransformer</string>
+                                                                </dictionary>
+                                                            </binding>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -174,15 +179,95 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <tableHeaderView key="headerView" wantsLayer="YES" id="orK-kR-OYs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="28"/>
+                        <rect key="frame" x="0.0" y="0.0" width="689" height="28"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ahd-rb-0kF">
-                    <rect key="frame" x="0.0" y="40" width="600" height="5"/>
+                    <rect key="frame" x="0.0" y="66" width="689" height="5"/>
                 </box>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="61O-ds-pVG">
+                    <rect key="frame" x="0.0" y="32" width="689" height="36"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="doM-LG-fj2">
+                            <rect key="frame" x="18" y="11" width="55" height="14"/>
+                            <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="Numbers:" id="2rU-eq-9CY">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="utC-oK-fX0">
+                            <rect key="frame" x="75" y="6" width="100" height="22"/>
+                            <popUpButtonCell key="cell" type="push" title="Decimal" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="P65-zj-Hs9" id="uk2-6b-FWz">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                                <menu key="menu" id="GBm-hV-RYq">
+                                    <items>
+                                        <menuItem title="Decimal" id="P65-zj-Hs9">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Hexadecimal" id="wwk-9B-Nji"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <binding destination="-2" name="selectedIndex" keyPath="self.preferences.numberDisplayMode" id="efu-Er-cGC"/>
+                            </connections>
+                        </popUpButton>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UkO-DM-e5B">
+                            <rect key="frame" x="189" y="11" width="32" height="14"/>
+                            <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="Data:" id="Jga-k5-O0I">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EXy-sV-dmN">
+                            <rect key="frame" x="223" y="6" width="100" height="22"/>
+                            <popUpButtonCell key="cell" type="push" title="Base64" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="PWG-fl-ttC" id="l5r-RH-vGf">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                                <menu key="menu" id="F8y-bR-cf3">
+                                    <items>
+                                        <menuItem title="Base64" id="PWG-fl-ttC"/>
+                                        <menuItem title="Hexadecimal" id="Mup-cB-vHw"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <binding destination="-2" name="selectedIndex" keyPath="self.preferences.dataDisplayMode" id="u6D-JU-Rt7"/>
+                            </connections>
+                        </popUpButton>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OSW-kw-Ecb">
+                            <rect key="frame" x="338" y="10" width="147" height="16"/>
+                            <buttonCell key="cell" type="check" title="Detect Numbers in Data" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="Pr4-Iw-eVs">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="smallSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.preferences.detectNumbersInData" id="4Gc-sC-Sgc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EXy-sV-dmN" firstAttribute="centerY" secondItem="UkO-DM-e5B" secondAttribute="centerY" id="2hn-SA-OHE"/>
+                        <constraint firstItem="OSW-kw-Ecb" firstAttribute="centerY" secondItem="EXy-sV-dmN" secondAttribute="centerY" id="4Co-MF-Yw5"/>
+                        <constraint firstItem="utC-oK-fX0" firstAttribute="leading" secondItem="doM-LG-fj2" secondAttribute="trailing" constant="8" symbolic="YES" id="7R7-uq-iI1"/>
+                        <constraint firstItem="utC-oK-fX0" firstAttribute="top" secondItem="61O-ds-pVG" secondAttribute="top" constant="10" id="fVX-Wv-Yxd"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="utC-oK-fX0" secondAttribute="trailing" constant="20" symbolic="YES" id="g5n-iM-VBj"/>
+                        <constraint firstItem="doM-LG-fj2" firstAttribute="leading" secondItem="61O-ds-pVG" secondAttribute="leading" constant="20" symbolic="YES" id="hF7-WG-ZrK"/>
+                        <constraint firstAttribute="bottom" secondItem="utC-oK-fX0" secondAttribute="bottom" constant="10" id="lep-id-jA2"/>
+                        <constraint firstItem="doM-LG-fj2" firstAttribute="centerY" secondItem="utC-oK-fX0" secondAttribute="centerY" id="oqq-Ca-aXp"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OSW-kw-Ecb" secondAttribute="trailing" constant="20" symbolic="YES" id="oun-x1-Wn4"/>
+                        <constraint firstItem="EXy-sV-dmN" firstAttribute="leading" secondItem="UkO-DM-e5B" secondAttribute="trailing" constant="8" symbolic="YES" id="piL-bM-AJt"/>
+                        <constraint firstItem="UkO-DM-e5B" firstAttribute="leading" secondItem="utC-oK-fX0" secondAttribute="trailing" constant="20" id="sHO-jy-dvD"/>
+                        <constraint firstItem="OSW-kw-Ecb" firstAttribute="leading" secondItem="EXy-sV-dmN" secondAttribute="trailing" constant="20" id="veY-qR-mYe"/>
+                        <constraint firstItem="UkO-DM-e5B" firstAttribute="centerY" secondItem="utC-oK-fX0" secondAttribute="centerY" id="zE0-TV-z1C"/>
+                    </constraints>
+                </customView>
                 <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjX-z9-GPG">
-                    <rect key="frame" x="10" y="10" width="580" height="22"/>
+                    <rect key="frame" x="10" y="10" width="669" height="22"/>
                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="U1H-qJ-Uwo">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -198,12 +283,15 @@
                 </searchField>
             </subviews>
             <constraints>
-                <constraint firstItem="IjX-z9-GPG" firstAttribute="top" secondItem="Ahd-rb-0kF" secondAttribute="bottom" constant="10" id="5pc-yp-Jyi"/>
                 <constraint firstItem="hGN-Wg-aRY" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="GWi-ho-bIU"/>
+                <constraint firstItem="61O-ds-pVG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="ILe-mG-S5M"/>
+                <constraint firstAttribute="trailing" secondItem="61O-ds-pVG" secondAttribute="trailing" id="JRg-y0-D3D"/>
                 <constraint firstAttribute="trailing" secondItem="Ahd-rb-0kF" secondAttribute="trailing" id="Ord-I0-LwF"/>
                 <constraint firstItem="Ahd-rb-0kF" firstAttribute="top" secondItem="hGN-Wg-aRY" secondAttribute="bottom" id="Wig-AL-YM5"/>
+                <constraint firstItem="61O-ds-pVG" firstAttribute="top" secondItem="Ahd-rb-0kF" secondAttribute="bottom" id="XQI-RE-xch"/>
                 <constraint firstAttribute="bottom" secondItem="IjX-z9-GPG" secondAttribute="bottom" constant="10" id="YOo-zZ-yqm"/>
                 <constraint firstAttribute="trailing" secondItem="IjX-z9-GPG" secondAttribute="trailing" constant="10" id="ddZ-kI-Bsd"/>
+                <constraint firstItem="IjX-z9-GPG" firstAttribute="top" secondItem="61O-ds-pVG" secondAttribute="bottom" id="fYI-qv-slQ"/>
                 <constraint firstItem="hGN-Wg-aRY" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="gMG-xX-IaZ"/>
                 <constraint firstItem="Ahd-rb-0kF" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="hBO-d3-gVI"/>
                 <constraint firstItem="IjX-z9-GPG" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="qGE-Ii-zAy"/>
