@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="689" height="331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveName="PropertiesTable" rowHeight="24" rowSizeStyle="automatic" headerView="orK-kR-OYs" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="S3g-Eq-j07" id="IWY-E5-zC4">
+                            <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" autosaveName="PropertiesTable" rowHeight="24" rowSizeStyle="automatic" headerView="orK-kR-OYs" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="S3g-Eq-j07" id="IWY-E5-zC4">
                                 <rect key="frame" x="0.0" y="0.0" width="689" height="303"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="17" height="0.0"/>
@@ -166,6 +166,8 @@
                                     <binding destination="9Ko-ok-zmX" name="content" keyPath="arrangedObjects" id="D9b-KS-cIT"/>
                                     <binding destination="9Ko-ok-zmX" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="D9b-KS-cIT" id="VdO-MP-SA2"/>
                                     <binding destination="9Ko-ok-zmX" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="VdO-MP-SA2" id="s6j-xW-BWz"/>
+                                    <outlet property="dataSource" destination="-2" id="MOZ-SJ-wEY"/>
+                                    <outlet property="delegate" destination="-2" id="rfK-no-Sax"/>
                                 </connections>
                             </outlineView>
                         </subviews>

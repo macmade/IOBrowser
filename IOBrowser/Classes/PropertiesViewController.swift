@@ -24,7 +24,7 @@
 
 import Cocoa
 
-public class PropertiesViewController: NSViewController
+public class PropertiesViewController: NSViewController, NSOutlineViewDelegate, NSOutlineViewDataSource
 {
     @objc private dynamic var item:       IODisplayItem
     @objc private dynamic var properties: [ PropertyListNode ]
@@ -65,6 +65,8 @@ public class PropertiesViewController: NSViewController
     public override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        self.outlineView.setDraggingSourceOperationMask( .copy, forLocal: false )
 
         self.treeController.sortDescriptors =
             [
@@ -194,5 +196,31 @@ public class PropertiesViewController: NSViewController
 
             self.collapseAll()
         }
+    }
+
+    @IBAction
+    public func copy( _ sender: Any? )
+    {
+        guard let items = self.treeController.selectedObjects as? [ PropertyListNode ], items.isEmpty == false
+        else
+        {
+            NSSound.beep()
+
+            return
+        }
+
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.writeObjects( items.map { PasteboardWriter( item: $0 ) } )
+    }
+
+    public func outlineView( _ outlineView: NSOutlineView, pasteboardWriterForItem item: Any ) -> NSPasteboardWriting?
+    {
+        guard let item = item as? NSTreeNode, let item = item.representedObject as? PropertyListNode
+        else
+        {
+            return nil
+        }
+
+        return PasteboardWriter( item: item )
     }
 }

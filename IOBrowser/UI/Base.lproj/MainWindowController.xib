@@ -188,6 +188,8 @@
                                                                 <binding destination="uah-mw-q2d" name="content" keyPath="arrangedObjects" id="iRd-na-Y9E"/>
                                                                 <binding destination="uah-mw-q2d" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="iRd-na-Y9E" id="ffW-Uj-t0k"/>
                                                                 <binding destination="uah-mw-q2d" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="ffW-Uj-t0k" id="KuF-O8-fpL"/>
+                                                                <outlet property="dataSource" destination="-2" id="geb-9J-2Ai"/>
+                                                                <outlet property="delegate" destination="-2" id="3RU-gh-t4n"/>
                                                             </connections>
                                                         </outlineView>
                                                     </subviews>
