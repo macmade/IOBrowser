@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="689" height="331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" headerView="orK-kR-OYs" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="S3g-Eq-j07" id="IWY-E5-zC4">
+                            <outlineView autoresizesSubviews="NO" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveName="PropertiesTable" rowHeight="24" rowSizeStyle="automatic" headerView="orK-kR-OYs" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="S3g-Eq-j07" id="IWY-E5-zC4">
                                 <rect key="frame" x="0.0" y="0.0" width="689" height="303"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="17" height="0.0"/>
@@ -140,13 +140,13 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="edm-bd-opd" name="textColor" keyPath="objectValue.textColor" id="aHA-Oo-CPZ"/>
-                                                            <binding destination="edm-bd-opd" name="toolTip" keyPath="objectValue.value" id="xOP-EZ-qD2"/>
                                                             <binding destination="edm-bd-opd" name="value" keyPath="objectValue" id="7w2-AL-wta">
                                                                 <dictionary key="options">
                                                                     <string key="NSValueTransformerName">PropertyValueTransformer</string>
                                                                 </dictionary>
                                                             </binding>
+                                                            <binding destination="edm-bd-opd" name="textColor" keyPath="objectValue.textColor" id="aHA-Oo-CPZ"/>
+                                                            <binding destination="edm-bd-opd" name="toolTip" keyPath="objectValue.value" id="xOP-EZ-qD2"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -199,12 +199,12 @@
                         </textField>
                         <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="utC-oK-fX0">
                             <rect key="frame" x="75" y="6" width="100" height="22"/>
-                            <popUpButtonCell key="cell" type="push" title="Decimal" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="P65-zj-Hs9" id="uk2-6b-FWz">
+                            <popUpButtonCell key="cell" type="push" title="Decimal" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="P65-zj-Hs9" id="uk2-6b-FWz">
                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="smallSystem"/>
                                 <menu key="menu" id="GBm-hV-RYq">
                                     <items>
-                                        <menuItem title="Decimal" id="P65-zj-Hs9">
+                                        <menuItem title="Decimal" state="on" id="P65-zj-Hs9">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem title="Hexadecimal" id="wwk-9B-Nji"/>
@@ -225,12 +225,12 @@
                         </textField>
                         <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EXy-sV-dmN">
                             <rect key="frame" x="223" y="6" width="100" height="22"/>
-                            <popUpButtonCell key="cell" type="push" title="Base64" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="PWG-fl-ttC" id="l5r-RH-vGf">
+                            <popUpButtonCell key="cell" type="push" title="Base64" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="PWG-fl-ttC" id="l5r-RH-vGf">
                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="smallSystem"/>
                                 <menu key="menu" id="F8y-bR-cf3">
                                     <items>
-                                        <menuItem title="Base64" id="PWG-fl-ttC"/>
+                                        <menuItem title="Base64" state="on" id="PWG-fl-ttC"/>
                                         <menuItem title="Hexadecimal" id="Mup-cB-vHw"/>
                                     </items>
                                 </menu>
