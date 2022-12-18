@@ -54,7 +54,7 @@ public class PasteboardWriter: NSObject, NSPasteboardWriting
 
     public func pasteboardPropertyList( item: PropertyListNode ) -> Any?
     {
-        guard let value = PropertyValueTransformer().transformedValue( self.item ) as? String
+        guard let value = PropertyValueTransformer().transformedValue( item ) as? String
         else
         {
             return nil

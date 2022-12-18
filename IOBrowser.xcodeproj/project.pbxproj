@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		050087D72949CEE400882DD8 /* PasteboardWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050087D62949CEE400882DD8 /* PasteboardWriter.swift */; };
 		050087DC2949D17E00882DD8 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050087DB2949D17E00882DD8 /* Either.swift */; };
+		050087E8294A661C00882DD8 /* PasteboardWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050087D62949CEE400882DD8 /* PasteboardWriter.swift */; };
+		050087E9294A661F00882DD8 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050087DB2949D17E00882DD8 /* Either.swift */; };
 		054776E4268A5C87005864F8 /* IODisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776E3268A5C87005864F8 /* IODisplayItem.swift */; };
 		054776F1268A7BED005864F8 /* PropertyListFormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054776F0268A7BED005864F8 /* PropertyListFormatViewController.swift */; };
 		054776F4268A7BFA005864F8 /* PropertyListFormatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054776F2268A7BFA005864F8 /* PropertyListFormatViewController.xib */; };
@@ -432,7 +434,6 @@
 			buildPhases = (
 				059861CA292B9B7000B20BBD /* Sources */,
 				059861D6292B9B7000B20BBD /* Frameworks */,
-				059861D8292B9B7000B20BBD /* ShellScript */,
 				059861D9292B9B7000B20BBD /* Resources */,
 			);
 			buildRules = (
@@ -555,24 +556,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    plist=\"IOBrowser/Info.plist\"\n    rev=$(git rev-list `git branch | grep -e \"^*\" | cut -d' ' -f 2` | wc -l)\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $rev\" \"$plist\"\nfi\n";
 		};
-		059861D8292B9B7000B20BBD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    plist=\"IOBrowser/Info.plist\"\n    rev=$(git rev-list `git branch | grep -e \"^*\" | cut -d' ' -f 2` | wc -l)\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $rev\" \"$plist\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -603,8 +586,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				059861CB292B9B7000B20BBD /* ArrayIsEmpty.swift in Sources */,
+				050087E8294A661C00882DD8 /* PasteboardWriter.swift in Sources */,
 				059861CC292B9B7000B20BBD /* PropertyListNode.swift in Sources */,
 				059861CD292B9B7000B20BBD /* IOObject.swift in Sources */,
+				050087E9294A661F00882DD8 /* Either.swift in Sources */,
 				059861CE292B9B7000B20BBD /* IODisplayItem.swift in Sources */,
 				059861CF292B9B7000B20BBD /* ApplicationDelegate.swift in Sources */,
 				059861D0292B9B7000B20BBD /* AboutWindowController.swift in Sources */,
