@@ -1,7 +1,7 @@
 IOBrowser
 =========
 
-[![Build Status](https://img.shields.io/github/workflow/status/macmade/IOBrowser/ci-mac?label=macOS&logo=apple)](https://github.com/macmade/IOBrowser/actions/workflows/ci-mac.yaml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/macmade/IOBrowser/ci-mac.yaml?label=macOS&logo=apple)](https://github.com/macmade/IOBrowser/actions/workflows/ci-mac.yaml)
 [![Issues](http://img.shields.io/github/issues/macmade/IOBrowser.svg?logo=github)](https://github.com/macmade/IOBrowser/issues)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?logo=git)
 ![License](https://img.shields.io/badge/license-mit-brightgreen.svg?logo=open-source-initiative)  
